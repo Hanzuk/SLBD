@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Capa_Vista {
-    public partial class MainViewer : Form {
+    public partial class MainViewer : MetroFramework.Forms.MetroForm {
         public MainViewer() {
             InitializeComponent();
         }

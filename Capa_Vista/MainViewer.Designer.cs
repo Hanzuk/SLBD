@@ -23,9 +23,19 @@
         /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MainViewer
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.Name = "MainViewer";
+            this.Style = MetroFramework.MetroColorStyle.Black;
             this.Text = "Form1";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ResumeLayout(false);
+
         }
 
         #endregion
