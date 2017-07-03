@@ -1,5 +1,5 @@
 ﻿namespace Capa_Vista {
-    partial class Form1 {
+    partial class MainViewer {
         /// <summary>
         /// Variable del diseñador necesaria.
         /// </summary>
