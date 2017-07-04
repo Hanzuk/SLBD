@@ -215,15 +215,16 @@
             // 
             this.listbColumns.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.listbColumns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.listbColumns.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listbColumns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.listbColumns.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listbColumns.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listbColumns.ForeColor = System.Drawing.Color.Silver;
             this.listbColumns.FormattingEnabled = true;
             this.listbColumns.ItemHeight = 25;
             this.listbColumns.Location = new System.Drawing.Point(4, 382);
             this.listbColumns.Margin = new System.Windows.Forms.Padding(4);
             this.listbColumns.Name = "listbColumns";
-            this.listbColumns.Size = new System.Drawing.Size(371, 229);
+            this.listbColumns.Size = new System.Drawing.Size(371, 225);
             this.listbColumns.TabIndex = 57;
             this.listbColumns.Visible = false;
             // 
