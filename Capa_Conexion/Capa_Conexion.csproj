@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="LoadColumnCC.cs" />
+    <Compile Include="LoadColumnDataCC.cs" />
     <Compile Include="LoadDataBaseCC.cs" />
     <Compile Include="LoadTableCC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

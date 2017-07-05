@@ -10,7 +10,7 @@ namespace Capa_Conexion
 {
     public class Connection
     {
-        SqlConnection objConnection = new SqlConnection("Data Source=.\\SQL2016; Integrated Security=True;");
+        SqlConnection objConnection = new SqlConnection("Data Source=DESKTOP-HL8QPHH; Integrated Security=True;");
 
         private bool OpenConnection() {
             try {

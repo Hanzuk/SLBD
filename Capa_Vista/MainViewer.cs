@@ -78,5 +78,10 @@ namespace Capa_Vista {
             btnLoadTables.Enabled = true;
             btnLoadColumns.Enabled = false;
         }
+
+        private void btnAnalyzeColumn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
