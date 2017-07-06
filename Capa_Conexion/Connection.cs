@@ -10,7 +10,7 @@ namespace Capa_Conexion
 {
     public class Connection
     {
-        SqlConnection objConnection = new SqlConnection("Data Source=DESKTOP-HL8QPHH; Integrated Security=True;");
+        SqlConnection objConnection = new SqlConnection(Helper.CnnStr("Hanzuk"));
 
         private bool OpenConnection() {
             try {
