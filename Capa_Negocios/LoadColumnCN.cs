@@ -8,9 +8,13 @@ using System.Data;
 
 namespace Capa_Negocios {
     public class LoadColumnCN {
-        public DataTable LoadColumns(string dbname, string tbname) {
+        public List<string> LoadColumns(string dbname, string tbname) {
             LoadColumnCC oLCCC = new LoadColumnCC();
-            return oLCCC.LoadColumns(dbname, tbname);
+            List<string> listColumns = new List<string>();
+            foreach (DataRow row in new LoadColumnCC().LoadColumns(dbname, tbname).Rows) {
+                listColumns.Add(row[0].ToString());
+            }
+            return listColumns;
         }
     }
 }

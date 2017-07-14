@@ -33,21 +33,17 @@ namespace Capa_Vista {
         }
 
         private void btnLoadTables_Click(object sender, EventArgs e) {
-            DataTable oDT = new LoadTableCN().LoadTables(cboDBList.SelectedValue.ToString());
-            cboTables.DisplayMember = "TABLE_NAME";
-            cboTables.ValueMember = "TABLE_NAME";
-            cboTables.DataSource = oDT;
+            List<string> listable = new LoadTableCN().LoadTables(cboDBList.SelectedValue.ToString());
+            cboTables.DataSource = listable;
             cboTables.Enabled = true;
-            lbTotalTables.Text = "Total de tablas encontradas: " + oDT.Rows.Count.ToString();
+            lbTotalTables.Text = "Total de tablas encontradas: " + listable.Count.ToString();
             btnLoadTables.Enabled = false;
             btnLoadColumns.Enabled = true;
         }
 
         private void btnLoadColumns_Click(object sender, EventArgs e) {
-            DataTable oDT = new LoadColumnCN().LoadColumns(cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString());
-            listbColumns.DisplayMember = "COLUMN_NAME";
-            listbColumns.ValueMember = "COLUMN_NAME";
-            listbColumns.DataSource = oDT;
+            List<string> listColumns = new LoadColumnCN().LoadColumns(cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString());
+            listbColumns.DataSource = listColumns;
             listbColumns.Visible = true;
         }
 
