@@ -9,7 +9,6 @@ using System.Data;
 namespace Capa_Negocios {
     public class LoadColumnCN {
         public List<string> LoadColumns(string dbname, string tbname) {
-            LoadColumnCC oLCCC = new LoadColumnCC();
             List<string> listColumns = new List<string>();
             foreach (DataRow row in new LoadColumnCC().LoadColumns(dbname, tbname).Rows) {
                 listColumns.Add(row[0].ToString());
