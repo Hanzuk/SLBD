@@ -68,7 +68,7 @@
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.metroTabControl1.ItemSize = new System.Drawing.Size(204, 43);
             this.metroTabControl1.Location = new System.Drawing.Point(45, 100);
-            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1288, 655);
@@ -102,7 +102,7 @@
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 9;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 47);
-            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Size = new System.Drawing.Size(1280, 604);
             this.metroTabPage1.TabIndex = 0;
@@ -124,7 +124,7 @@
             this.pResultado.Controls.Add(this.label9);
             this.pResultado.Controls.Add(this.label8);
             this.pResultado.Location = new System.Drawing.Point(586, 351);
-            this.pResultado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pResultado.Margin = new System.Windows.Forms.Padding(4);
             this.pResultado.Name = "pResultado";
             this.pResultado.Size = new System.Drawing.Size(689, 240);
             this.pResultado.TabIndex = 59;
@@ -204,7 +204,7 @@
             this.btnAnalyzeColumn.ForeColor = System.Drawing.Color.White;
             this.btnAnalyzeColumn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnalyzeColumn.Location = new System.Drawing.Point(734, 255);
-            this.btnAnalyzeColumn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnalyzeColumn.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnalyzeColumn.Name = "btnAnalyzeColumn";
             this.btnAnalyzeColumn.Size = new System.Drawing.Size(180, 51);
             this.btnAnalyzeColumn.TabIndex = 58;
@@ -216,14 +216,14 @@
             // 
             this.listbColumns.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.listbColumns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.listbColumns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.listbColumns.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listbColumns.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listbColumns.ForeColor = System.Drawing.Color.Silver;
             this.listbColumns.FormattingEnabled = true;
             this.listbColumns.ItemHeight = 25;
             this.listbColumns.Location = new System.Drawing.Point(4, 382);
-            this.listbColumns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listbColumns.Margin = new System.Windows.Forms.Padding(4);
             this.listbColumns.Name = "listbColumns";
             this.listbColumns.Size = new System.Drawing.Size(371, 200);
             this.listbColumns.TabIndex = 57;
@@ -239,7 +239,7 @@
             this.btnLoadColumns.ForeColor = System.Drawing.Color.White;
             this.btnLoadColumns.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoadColumns.Location = new System.Drawing.Point(4, 311);
-            this.btnLoadColumns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoadColumns.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadColumns.Name = "btnLoadColumns";
             this.btnLoadColumns.Size = new System.Drawing.Size(372, 51);
             this.btnLoadColumns.TabIndex = 56;
@@ -267,7 +267,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::Capa_Vista.Properties.Resources.column;
             this.pictureBox3.Location = new System.Drawing.Point(4, 255);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(34, 38);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -298,7 +298,7 @@
             this.btnLoadTables.ForeColor = System.Drawing.Color.White;
             this.btnLoadTables.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoadTables.Location = new System.Drawing.Point(1045, 120);
-            this.btnLoadTables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoadTables.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadTables.Name = "btnLoadTables";
             this.btnLoadTables.Size = new System.Drawing.Size(230, 51);
             this.btnLoadTables.TabIndex = 52;
@@ -315,7 +315,7 @@
             this.cboTables.FormattingEnabled = true;
             this.cboTables.ItemHeight = 24;
             this.cboTables.Location = new System.Drawing.Point(259, 135);
-            this.cboTables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTables.Margin = new System.Windows.Forms.Padding(4);
             this.cboTables.Name = "cboTables";
             this.cboTables.Size = new System.Drawing.Size(405, 30);
             this.cboTables.Style = MetroFramework.MetroColorStyle.Silver;
@@ -341,7 +341,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Capa_Vista.Properties.Resources.table_grid;
             this.pictureBox2.Location = new System.Drawing.Point(4, 135);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(34, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -354,7 +354,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.panel1.Location = new System.Drawing.Point(4, 215);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1271, 2);
             this.panel1.TabIndex = 48;
@@ -370,7 +370,7 @@
             this.btnLoadDB.ForeColor = System.Drawing.Color.White;
             this.btnLoadDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoadDB.Location = new System.Drawing.Point(1045, 29);
-            this.btnLoadDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoadDB.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadDB.Name = "btnLoadDB";
             this.btnLoadDB.Size = new System.Drawing.Size(230, 51);
             this.btnLoadDB.TabIndex = 47;
@@ -422,7 +422,7 @@
             this.cboDBList.FormattingEnabled = true;
             this.cboDBList.ItemHeight = 24;
             this.cboDBList.Location = new System.Drawing.Point(259, 42);
-            this.cboDBList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboDBList.Margin = new System.Windows.Forms.Padding(4);
             this.cboDBList.Name = "cboDBList";
             this.cboDBList.Size = new System.Drawing.Size(405, 30);
             this.cboDBList.Style = MetroFramework.MetroColorStyle.Silver;
@@ -449,7 +449,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Capa_Vista.Properties.Resources.database;
             this.pictureBox1.Location = new System.Drawing.Point(4, 42);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(34, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -462,7 +462,7 @@
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.HorizontalScrollbarSize = 9;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 47);
-            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(1280, 604);
             this.metroTabPage2.TabIndex = 1;
@@ -479,7 +479,7 @@
             this.Controls.Add(this.metroTabControl1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainViewer";
             this.Padding = new System.Windows.Forms.Padding(45, 100, 45, 25);
             this.Resizable = false;
