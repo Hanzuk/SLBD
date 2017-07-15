@@ -200,7 +200,7 @@
             this.btnAnalyzeColumn.Enabled = false;
             this.btnAnalyzeColumn.FlatAppearance.BorderSize = 0;
             this.btnAnalyzeColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnalyzeColumn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnalyzeColumn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnalyzeColumn.ForeColor = System.Drawing.Color.White;
             this.btnAnalyzeColumn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnalyzeColumn.Location = new System.Drawing.Point(734, 255);
@@ -235,7 +235,7 @@
             this.btnLoadColumns.Enabled = false;
             this.btnLoadColumns.FlatAppearance.BorderSize = 0;
             this.btnLoadColumns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadColumns.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadColumns.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadColumns.ForeColor = System.Drawing.Color.White;
             this.btnLoadColumns.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoadColumns.Location = new System.Drawing.Point(4, 311);
@@ -294,7 +294,7 @@
             this.btnLoadTables.FlatAppearance.BorderSize = 0;
             this.btnLoadTables.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btnLoadTables.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadTables.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadTables.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadTables.ForeColor = System.Drawing.Color.White;
             this.btnLoadTables.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoadTables.Location = new System.Drawing.Point(1045, 120);
@@ -366,7 +366,7 @@
             this.btnLoadDB.FlatAppearance.BorderSize = 0;
             this.btnLoadDB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btnLoadDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadDB.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadDB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadDB.ForeColor = System.Drawing.Color.White;
             this.btnLoadDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoadDB.Location = new System.Drawing.Point(1045, 29);
