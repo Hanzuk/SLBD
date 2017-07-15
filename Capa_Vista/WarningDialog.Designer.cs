@@ -103,7 +103,7 @@
             this.Padding = new System.Windows.Forms.Padding(40, 40, 40, 40);
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
-            this.Style = MetroFramework.MetroColorStyle.Black;
+            this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "¡Atención!";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.WarningDialog_Load);

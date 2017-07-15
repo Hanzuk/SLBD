@@ -36,12 +36,10 @@
             this.listbColumns = new System.Windows.Forms.ListBox();
             this.btnLoadColumns = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbTotalTables = new System.Windows.Forms.Label();
             this.btnLoadTables = new System.Windows.Forms.Button();
             this.cboTables = new MetroFramework.Controls.MetroComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLoadDB = new System.Windows.Forms.Button();
             this.lbCreated = new System.Windows.Forms.Label();
@@ -49,8 +47,10 @@
             this.lbOwner = new System.Windows.Forms.Label();
             this.cboDBList = new MetroFramework.Controls.MetroComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.pResultado.SuspendLayout();
@@ -61,18 +61,19 @@
             // 
             // metroTabControl1
             // 
+            this.metroTabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Tall;
-            this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
+            this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.ItemSize = new System.Drawing.Size(204, 43);
             this.metroTabControl1.Location = new System.Drawing.Point(45, 100);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1288, 655);
-            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.White;
+            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabControl1.UseSelectable = true;
@@ -98,6 +99,7 @@
             this.metroTabPage1.Controls.Add(this.cboDBList);
             this.metroTabPage1.Controls.Add(this.label1);
             this.metroTabPage1.Controls.Add(this.pictureBox1);
+            this.metroTabPage1.ForeColor = System.Drawing.Color.White;
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 9;
@@ -196,9 +198,10 @@
             // 
             // btnAnalyzeColumn
             // 
-            this.btnAnalyzeColumn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            this.btnAnalyzeColumn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(45)))), ((int)(((byte)(128)))));
             this.btnAnalyzeColumn.Enabled = false;
             this.btnAnalyzeColumn.FlatAppearance.BorderSize = 0;
+            this.btnAnalyzeColumn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(64)))), ((int)(((byte)(139)))));
             this.btnAnalyzeColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnalyzeColumn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnalyzeColumn.ForeColor = System.Drawing.Color.White;
@@ -231,9 +234,10 @@
             // 
             // btnLoadColumns
             // 
-            this.btnLoadColumns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            this.btnLoadColumns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(45)))), ((int)(((byte)(128)))));
             this.btnLoadColumns.Enabled = false;
             this.btnLoadColumns.FlatAppearance.BorderSize = 0;
+            this.btnLoadColumns.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(64)))), ((int)(((byte)(139)))));
             this.btnLoadColumns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadColumns.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadColumns.ForeColor = System.Drawing.Color.White;
@@ -254,25 +258,13 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(68, 255);
+            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Location = new System.Drawing.Point(68, 260);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(213, 30);
             this.label4.TabIndex = 55;
             this.label4.Text = "Columnas de la tabla";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Capa_Vista.Properties.Resources.column;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 255);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 54;
-            this.pictureBox3.TabStop = false;
             // 
             // lbTotalTables
             // 
@@ -280,7 +272,7 @@
             this.lbTotalTables.BackColor = System.Drawing.Color.Transparent;
             this.lbTotalTables.Font = new System.Drawing.Font("Segoe UI Semilight", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalTables.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbTotalTables.Location = new System.Drawing.Point(678, 144);
+            this.lbTotalTables.Location = new System.Drawing.Point(678, 149);
             this.lbTotalTables.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTotalTables.Name = "lbTotalTables";
             this.lbTotalTables.Size = new System.Drawing.Size(0, 23);
@@ -289,15 +281,15 @@
             // btnLoadTables
             // 
             this.btnLoadTables.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnLoadTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(45)))), ((int)(((byte)(128)))));
             this.btnLoadTables.Enabled = false;
             this.btnLoadTables.FlatAppearance.BorderSize = 0;
-            this.btnLoadTables.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btnLoadTables.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(64)))), ((int)(((byte)(139)))));
             this.btnLoadTables.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadTables.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadTables.ForeColor = System.Drawing.Color.White;
             this.btnLoadTables.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoadTables.Location = new System.Drawing.Point(1045, 120);
+            this.btnLoadTables.Location = new System.Drawing.Point(1045, 125);
             this.btnLoadTables.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadTables.Name = "btnLoadTables";
             this.btnLoadTables.Size = new System.Drawing.Size(230, 51);
@@ -314,7 +306,7 @@
             this.cboTables.ForeColor = System.Drawing.Color.White;
             this.cboTables.FormattingEnabled = true;
             this.cboTables.ItemHeight = 24;
-            this.cboTables.Location = new System.Drawing.Point(259, 135);
+            this.cboTables.Location = new System.Drawing.Point(259, 140);
             this.cboTables.Margin = new System.Windows.Forms.Padding(4);
             this.cboTables.Name = "cboTables";
             this.cboTables.Size = new System.Drawing.Size(405, 30);
@@ -328,25 +320,13 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(68, 135);
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(68, 140);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 30);
             this.label2.TabIndex = 50;
             this.label2.Text = "Tablas";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Capa_Vista.Properties.Resources.table_grid;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 135);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 49;
-            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -362,14 +342,14 @@
             // btnLoadDB
             // 
             this.btnLoadDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnLoadDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(45)))), ((int)(((byte)(128)))));
             this.btnLoadDB.FlatAppearance.BorderSize = 0;
-            this.btnLoadDB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btnLoadDB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(64)))), ((int)(((byte)(139)))));
             this.btnLoadDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadDB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadDB.ForeColor = System.Drawing.Color.White;
             this.btnLoadDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoadDB.Location = new System.Drawing.Point(1045, 29);
+            this.btnLoadDB.Location = new System.Drawing.Point(1045, 34);
             this.btnLoadDB.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadDB.Name = "btnLoadDB";
             this.btnLoadDB.Size = new System.Drawing.Size(230, 51);
@@ -384,7 +364,7 @@
             this.lbCreated.BackColor = System.Drawing.Color.Transparent;
             this.lbCreated.Font = new System.Drawing.Font("Segoe UI Semilight", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCreated.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbCreated.Location = new System.Drawing.Point(1052, 51);
+            this.lbCreated.Location = new System.Drawing.Point(1052, 56);
             this.lbCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCreated.Name = "lbCreated";
             this.lbCreated.Size = new System.Drawing.Size(0, 23);
@@ -396,7 +376,7 @@
             this.lbSize.BackColor = System.Drawing.Color.Transparent;
             this.lbSize.Font = new System.Drawing.Font("Segoe UI Semilight", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSize.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbSize.Location = new System.Drawing.Point(904, 51);
+            this.lbSize.Location = new System.Drawing.Point(904, 56);
             this.lbSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSize.Name = "lbSize";
             this.lbSize.Size = new System.Drawing.Size(0, 23);
@@ -408,7 +388,7 @@
             this.lbOwner.BackColor = System.Drawing.Color.Transparent;
             this.lbOwner.Font = new System.Drawing.Font("Segoe UI Semilight", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOwner.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbOwner.Location = new System.Drawing.Point(678, 51);
+            this.lbOwner.Location = new System.Drawing.Point(678, 56);
             this.lbOwner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOwner.Name = "lbOwner";
             this.lbOwner.Size = new System.Drawing.Size(0, 23);
@@ -421,7 +401,7 @@
             this.cboDBList.ForeColor = System.Drawing.Color.White;
             this.cboDBList.FormattingEnabled = true;
             this.cboDBList.ItemHeight = 24;
-            this.cboDBList.Location = new System.Drawing.Point(259, 42);
+            this.cboDBList.Location = new System.Drawing.Point(259, 47);
             this.cboDBList.Margin = new System.Windows.Forms.Padding(4);
             this.cboDBList.Name = "cboDBList";
             this.cboDBList.Size = new System.Drawing.Size(405, 30);
@@ -436,25 +416,13 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(68, 42);
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(68, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 30);
             this.label1.TabIndex = 42;
             this.label1.Text = "Bases de Datos";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Capa_Vista.Properties.Resources.database;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 42);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
             // 
             // metroTabPage2
             // 
@@ -472,12 +440,49 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Capa_Vista.Properties.Resources.column;
+            this.pictureBox3.Location = new System.Drawing.Point(4, 255);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 54;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Capa_Vista.Properties.Resources.table_grid;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 135);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 49;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Capa_Vista.Properties.Resources.database;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 42);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.metroTabControl1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainViewer";
