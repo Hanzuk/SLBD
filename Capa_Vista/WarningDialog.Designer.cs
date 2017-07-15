@@ -23,10 +23,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.btnClose = new System.Windows.Forms.Button();
             this.lbMessage = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tmOpacity = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +79,11 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "¡Atención!";
             // 
+            // tmOpacity
+            // 
+            this.tmOpacity.Enabled = true;
+            this.tmOpacity.Tick += new System.EventHandler(this.tmOpacity_Tick);
+            // 
             // WarningDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -92,12 +99,14 @@
             this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "WarningDialog";
+            this.Opacity = 0D;
             this.Padding = new System.Windows.Forms.Padding(40, 40, 40, 40);
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.Black;
             this.Text = "¡Atención!";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Load += new System.EventHandler(this.WarningDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,5 +119,6 @@
         private System.Windows.Forms.Label lbMessage;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer tmOpacity;
     }
 }

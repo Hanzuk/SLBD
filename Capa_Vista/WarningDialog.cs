@@ -23,5 +23,16 @@ namespace Capa_Vista {
             WarningDialog WD = new WarningDialog(Message);
             WD.ShowDialog();
         }
+
+        private void WarningDialog_Load(object sender, EventArgs e) {
+            tmOpacity.Start();
+        }
+
+        private void tmOpacity_Tick(object sender, EventArgs e) {
+            this.Opacity += .20;
+            if (this.Opacity == 1) {
+                tmOpacity.Stop();
+            }
+        }
     }
 }
