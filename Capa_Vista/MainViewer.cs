@@ -34,11 +34,15 @@ namespace Capa_Vista {
 
         private void btnLoadTables_Click(object sender, EventArgs e) {
             List<string> listable = new LoadTableCN().LoadTables(cboDBList.SelectedValue.ToString());
-            cboTables.DataSource = listable;
-            cboTables.Enabled = true;
-            lbTotalTables.Text = "Total de tablas encontradas: " + listable.Count.ToString();
-            btnLoadTables.Enabled = false;
-            btnLoadColumns.Enabled = true;
+            if (listable.Count > 0) {
+                cboTables.DataSource = listable;
+                cboTables.Enabled = true;
+                lbTotalTables.Text = "Total de tablas encontradas: " + listable.Count.ToString();
+                btnLoadTables.Enabled = false;
+                btnLoadColumns.Enabled = true;
+            } else {
+                WarningDialog.ShowDialog("¡No existen tablas para esta Base de Datos!");
+            }
         }
 
         private void btnLoadColumns_Click(object sender, EventArgs e) {
