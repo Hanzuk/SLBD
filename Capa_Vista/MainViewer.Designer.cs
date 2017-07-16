@@ -36,10 +36,12 @@
             this.listbColumns = new System.Windows.Forms.ListBox();
             this.btnLoadColumns = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbTotalTables = new System.Windows.Forms.Label();
             this.btnLoadTables = new System.Windows.Forms.Button();
             this.cboTables = new MetroFramework.Controls.MetroComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLoadDB = new System.Windows.Forms.Button();
             this.lbCreated = new System.Windows.Forms.Label();
@@ -47,10 +49,8 @@
             this.lbOwner = new System.Windows.Forms.Label();
             this.cboDBList = new MetroFramework.Controls.MetroComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.pResultado.SuspendLayout();
@@ -266,6 +266,18 @@
             this.label4.TabIndex = 55;
             this.label4.Text = "Columnas de la tabla";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Capa_Vista.Properties.Resources.column;
+            this.pictureBox3.Location = new System.Drawing.Point(4, 255);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 54;
+            this.pictureBox3.TabStop = false;
+            // 
             // lbTotalTables
             // 
             this.lbTotalTables.AutoSize = true;
@@ -310,7 +322,7 @@
             this.cboTables.Margin = new System.Windows.Forms.Padding(4);
             this.cboTables.Name = "cboTables";
             this.cboTables.Size = new System.Drawing.Size(405, 30);
-            this.cboTables.Style = MetroFramework.MetroColorStyle.Silver;
+            this.cboTables.Style = MetroFramework.MetroColorStyle.Purple;
             this.cboTables.TabIndex = 51;
             this.cboTables.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cboTables.UseSelectable = true;
@@ -327,6 +339,18 @@
             this.label2.Size = new System.Drawing.Size(71, 30);
             this.label2.TabIndex = 50;
             this.label2.Text = "Tablas";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Capa_Vista.Properties.Resources.table_grid;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 135);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 49;
+            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -405,7 +429,7 @@
             this.cboDBList.Margin = new System.Windows.Forms.Padding(4);
             this.cboDBList.Name = "cboDBList";
             this.cboDBList.Size = new System.Drawing.Size(405, 30);
-            this.cboDBList.Style = MetroFramework.MetroColorStyle.Silver;
+            this.cboDBList.Style = MetroFramework.MetroColorStyle.Purple;
             this.cboDBList.TabIndex = 43;
             this.cboDBList.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cboDBList.UseSelectable = true;
@@ -424,6 +448,18 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Bases de Datos";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Capa_Vista.Properties.Resources.database;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 42);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
             // metroTabPage2
             // 
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
@@ -439,42 +475,6 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Capa_Vista.Properties.Resources.column;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 255);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 54;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Capa_Vista.Properties.Resources.table_grid;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 135);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 49;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Capa_Vista.Properties.Resources.database;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 42);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
             // 
             // MainViewer
             // 
