@@ -10,12 +10,13 @@ namespace Capa_Conexion
 {
     public class LoadColumnDataCC
     {
-        public DataTable LoadTables(string dbname)
+        public DataTable LoadTables(string dbname, string tbname)
         {
             Connection oCN = new Connection();
             SqlCommand oSQLC = new SqlCommand();
             oSQLC.CommandType = CommandType.Text;
-            oSQLC.CommandText = "";
+            oSQLC.CommandText = "SELECT COLUMN_NAME,"+"DATA_TYPE,"+"CHARACTER_MAXIMUM_LENGTH, "+"IS_NULLABLE ,"+" FROM" + dbname + ".INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @TbName;";
+            oSQLC.Parameters.Add("@TbName", SqlDbType.VarChar).Value = tbname;
             return oCN.ExecuteQuery(oSQLC);
         }
     }

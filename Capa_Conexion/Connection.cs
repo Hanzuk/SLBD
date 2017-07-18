@@ -10,7 +10,7 @@ namespace Capa_Conexion
 {
     public class Connection
     {
-        SqlConnection objConnection = new SqlConnection(Helper.CnnStr("Hanzuk"));
+        SqlConnection objConnection = new SqlConnection(Helper.CnnStr("Raiden"));
 
         private bool OpenConnection() {
             try {
