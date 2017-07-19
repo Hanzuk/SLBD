@@ -83,6 +83,7 @@
             // tmOpacity
             // 
             this.tmOpacity.Enabled = true;
+            this.tmOpacity.Interval = 50;
             this.tmOpacity.Tick += new System.EventHandler(this.tmOpacity_Tick);
             // 
             // WarningDialog
@@ -103,7 +104,7 @@
             this.Opacity = 0D;
             this.Padding = new System.Windows.Forms.Padding(40, 40, 40, 40);
             this.Resizable = false;
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "¡Atención!";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
