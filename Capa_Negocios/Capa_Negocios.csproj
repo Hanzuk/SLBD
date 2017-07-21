@@ -43,6 +43,7 @@
     <Compile Include="LoadColumnCN.cs" />
     <Compile Include="LoadColumnDataCN.cs" />
     <Compile Include="LoadDataBaseCN.cs" />
+    <Compile Include="LoadInstancesCN.cs" />
     <Compile Include="LoadTableCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

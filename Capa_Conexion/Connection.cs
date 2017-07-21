@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,11 @@ namespace Capa_Conexion
 {
     public class Connection
     {
-        SqlConnection objConnection = new SqlConnection(Helper.CnnStr("Hanzuk"));
+        SqlConnection objConnection/* = new SqlConnection(Helper.CnnStr("Hanzuk"))*/;
+
+        public Connection(string instance) {
+            objConnection = new SqlConnection($"Data Source={instance};Integrated Security=True");
+        }
 
         private bool OpenConnection() {
             try {
@@ -49,6 +54,20 @@ namespace Capa_Conexion
             } catch (SqlException e) {
                 throw e;
             }
+        }
+
+        public bool TestConnection() {
+            if (OpenConnection()) {
+                CloseConnection();
+                return true;
+            } else {
+                CloseConnection();
+                return false;
+            }
+        }
+
+        public DataTable LoadInstances() {
+            return SqlDataSourceEnumerator.Instance.GetDataSources();
         }
     }
 }

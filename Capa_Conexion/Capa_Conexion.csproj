@@ -46,6 +46,7 @@
     <Compile Include="LoadColumnCC.cs" />
     <Compile Include="LoadColumnDataCC.cs" />
     <Compile Include="LoadDataBaseCC.cs" />
+    <Compile Include="LoadInstancesCC.cs" />
     <Compile Include="LoadTableCC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

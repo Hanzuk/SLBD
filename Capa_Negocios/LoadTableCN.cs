@@ -8,9 +8,9 @@ using Capa_Conexion;
 
 namespace Capa_Negocios {
     public class LoadTableCN {
-        public List<string> LoadTables(string dbname) {
+        public List<string> LoadTables(string instance, string dbname) {
             List<string> listables = new List<string>();
-            foreach (DataRow row in new LoadTableCC().LoadTables(dbname).Rows) {
+            foreach (DataRow row in new LoadTableCC().LoadTables(instance, dbname).Rows) {
                 listables.Add(row[0].ToString());
             }
             return listables;

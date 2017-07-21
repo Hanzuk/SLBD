@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InstancesViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstancesViewer.Designer.cs">
+      <DependentUpon>InstancesViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,12 +68,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuccessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuccessDialog.Designer.cs">
+      <DependentUpon>SuccessDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="WarningDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InstancesViewer.resx">
+      <DependentUpon>InstancesViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainViewer.resx">
       <DependentUpon>MainViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +96,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SuccessDialog.resx">
+      <DependentUpon>SuccessDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WarningDialog.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

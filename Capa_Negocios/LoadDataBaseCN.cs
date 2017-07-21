@@ -10,9 +10,9 @@ namespace Capa_Negocios
 {
     public class LoadDataBaseCN
     {
-        public DataTable LoadDataBases() {
+        public DataTable LoadDataBases(string instance) {
             LoadDataBaseCC oLDBCC = new LoadDataBaseCC();
-            return oLDBCC.LoadDataBases();
+            return oLDBCC.LoadDataBases(instance);
         }
     }
 }

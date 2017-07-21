@@ -11,13 +11,16 @@ using Capa_Negocios;
 
 namespace Capa_Vista {
     public partial class MainViewer : MetroFramework.Forms.MetroForm {
-        public MainViewer() {
+
+        public string InstanceName { get; set; }
+        public MainViewer(string instanceName) {
             InitializeComponent();
+            InstanceName = instanceName;
         }
 
         DataTable oDTDB;
         private void btnLoadDB_Click(object sender, EventArgs e) {
-            oDTDB = new LoadDataBaseCN().LoadDataBases();
+            oDTDB = new LoadDataBaseCN().LoadDataBases(InstanceName);
             cboDBList.DisplayMember = "name";
             cboDBList.ValueMember = "name";
             cboDBList.DataSource = oDTDB;
@@ -33,7 +36,7 @@ namespace Capa_Vista {
         }
 
         private void btnLoadTables_Click(object sender, EventArgs e) {
-            List<string> listable = new LoadTableCN().LoadTables(cboDBList.SelectedValue.ToString());
+            List<string> listable = new LoadTableCN().LoadTables(InstanceName, cboDBList.SelectedValue.ToString());
             if (listable.Count > 0) {
                 cboTables.DataSource = listable;
                 cboTables.Enabled = true;
@@ -46,7 +49,7 @@ namespace Capa_Vista {
         }
 
         private void btnLoadColumns_Click(object sender, EventArgs e) {
-            List<string> listColumns = new LoadColumnCN().LoadColumns(cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString());
+            List<string> listColumns = new LoadColumnCN().LoadColumns(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString());
             listbColumns.DataSource = listColumns;
             listbColumns.Visible = true;
         }
@@ -82,6 +85,17 @@ namespace Capa_Vista {
         private void btnAnalyzeColumn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearchInstances_Click(object sender, EventArgs e) {
+            Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "InstancesViewer").SingleOrDefault<Form>();
+            if (existe != null) {
+                existe.Show();
+            }
+        }
+
+        private void MainViewer_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
         }
     }
 }
