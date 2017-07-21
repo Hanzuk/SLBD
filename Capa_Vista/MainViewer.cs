@@ -43,7 +43,7 @@ namespace Capa_Vista {
                 btnLoadTables.Enabled = false;
                 btnLoadColumns.Enabled = true;
             } else {
-                WarningDialog.ShowDialog("¡No existen tablas para esta Base de Datos!");
+                ErrorDialog.ShowDialog("¡No existen tablas para esta Base de Datos!");
             }
         }
 
