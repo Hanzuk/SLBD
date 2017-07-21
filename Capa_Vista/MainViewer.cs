@@ -13,9 +13,8 @@ namespace Capa_Vista {
     public partial class MainViewer : MetroFramework.Forms.MetroForm {
 
         public string InstanceName { get; set; }
-        public MainViewer(string instanceName) {
+        public MainViewer() {
             InitializeComponent();
-            InstanceName = instanceName;
         }
 
         DataTable oDTDB;
@@ -90,12 +89,11 @@ namespace Capa_Vista {
         private void btnSearchInstances_Click(object sender, EventArgs e) {
             Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "InstancesViewer").SingleOrDefault<Form>();
             if (existe != null) {
-                existe.Show();
+                existe.BringToFront();
+            } else {
+                InstancesViewer IW = new InstancesViewer();
+                IW.Show();
             }
-        }
-
-        private void MainViewer_FormClosed(object sender, FormClosedEventArgs e) {
-            Application.Exit();
         }
     }
 }

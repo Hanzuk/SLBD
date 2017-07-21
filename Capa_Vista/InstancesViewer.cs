@@ -35,15 +35,11 @@ namespace Capa_Vista {
             if (cboInstances.Items.Count == 0) {
                 WarningDialog.ShowDialog("Carga las instancias antes de probar una conexión.");
             } else {
-                Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "MainViewer").SingleOrDefault<Form>();
-                if (existe != null) {
-                    existe.BringToFront();
-                    this.Hide();
-                } else {
-                    MainViewer mainForm = new MainViewer(cboInstances.SelectedValue.ToString());
-                    this.Hide();
-                    mainForm.Show();
-                }
+                //Busca el Formulario principal
+                MainViewer MW = Application.OpenForms.OfType<MainViewer>().Where(x => x.Name == "MainViewer").SingleOrDefault<MainViewer>();
+                MW.InstanceName = cboInstances.SelectedValue.ToString();
+                MW.BtnLoadDB.Enabled = true;
+                this.Close();
             }
         }
     }

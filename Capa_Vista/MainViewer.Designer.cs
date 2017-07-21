@@ -1,4 +1,6 @@
-﻿namespace Capa_Vista {
+﻿using System.Windows.Forms;
+
+namespace Capa_Vista {
     partial class MainViewer {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -123,7 +125,7 @@
             this.btnSearchInstances.FlatAppearance.BorderSize = 0;
             this.btnSearchInstances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(64)))), ((int)(((byte)(139)))));
             this.btnSearchInstances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchInstances.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchInstances.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchInstances.ForeColor = System.Drawing.Color.White;
             this.btnSearchInstances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchInstances.Location = new System.Drawing.Point(1037, 22);
@@ -131,7 +133,7 @@
             this.btnSearchInstances.Name = "btnSearchInstances";
             this.btnSearchInstances.Size = new System.Drawing.Size(230, 51);
             this.btnSearchInstances.TabIndex = 60;
-            this.btnSearchInstances.Text = "Cambiar instancia";
+            this.btnSearchInstances.Text = "Buscar o cambiar instancia";
             this.btnSearchInstances.UseVisualStyleBackColor = false;
             this.btnSearchInstances.Click += new System.EventHandler(this.btnSearchInstances_Click);
             // 
@@ -388,6 +390,7 @@
             // 
             this.btnLoadDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(45)))), ((int)(((byte)(128)))));
+            this.btnLoadDB.Enabled = false;
             this.btnLoadDB.FlatAppearance.BorderSize = 0;
             this.btnLoadDB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(64)))), ((int)(((byte)(139)))));
             this.btnLoadDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -513,7 +516,6 @@
             this.Style = MetroFramework.MetroColorStyle.Black;
             this.Text = "Sistema Lector de Bases de Datos";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainViewer_FormClosed);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
@@ -556,6 +558,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSearchInstances;
+
+        public Button BtnLoadDB { get => btnLoadDB; set => btnLoadDB = value; }
     }
 }
 
