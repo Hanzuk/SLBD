@@ -87,6 +87,7 @@ namespace Capa_Vista {
         }
 
         private void btnSearchInstances_Click(object sender, EventArgs e) {
+            //Valida si el formulario ya esta abierto.
             Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "InstancesViewer").SingleOrDefault<Form>();
             if (existe != null) {
                 existe.BringToFront();
