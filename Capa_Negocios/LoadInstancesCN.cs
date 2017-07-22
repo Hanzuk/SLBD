@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocios {
     public class LoadInstancesCN {
-        public List<string> LoadInstances() {
-            List<string> ListIntances = new List<string>();
-            foreach (DataRow row in new LoadInstancesCC().LoadInstances().Rows) {
-                string connectionString = row["ServerName"] + "\\" + row["InstanceName"];
-                ListIntances.Add(connectionString);
-            }
-            return ListIntances;
+        public Task<List<string>> LoadInstances() {
+            return Task.Run(() => {
+                List<string> ListIntances = new List<string>();
+                foreach (DataRow row in new LoadInstancesCC().LoadInstances().Rows) {
+                    string connectionString = row["ServerName"] + "\\" + row["InstanceName"];
+                    ListIntances.Add(connectionString);
+                }
+                return ListIntances;
+            });
         }
 
         public bool TestConnection(string instance) {

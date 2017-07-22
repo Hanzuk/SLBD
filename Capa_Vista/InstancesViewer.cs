@@ -15,8 +15,14 @@ namespace Capa_Vista {
             InitializeComponent();
         }
 
-        private void btnLoadInstances_Click(object sender, EventArgs e) {
-            cboInstances.DataSource = new LoadInstancesCN().LoadInstances();
+        private async void btnLoadInstances_Click(object sender, EventArgs e) {
+            LoadInstancesCN oLICN = new LoadInstancesCN();
+            panelSpinner.Visible = true;
+            btnLoadInstances.Enabled = false;
+            btnSetIntance.Enabled = false;
+            btnCheckInstance.Enabled = false;
+            cboInstances.DataSource = await oLICN.LoadInstances();
+            tmSpinner.Start();
         }
 
         private void btnCheckInstance_Click(object sender, EventArgs e) {
@@ -40,6 +46,26 @@ namespace Capa_Vista {
                 MW.InstanceName = cboInstances.SelectedValue.ToString();
                 MW.BtnLoadDB.Enabled = true;
                 this.Close();
+            }
+        }
+
+        int expansion = 1;
+        private void tmSpinner_Tick(object sender, EventArgs e) {
+            if (cboInstances.Items.Count > 0) {
+                tmSpinner.Stop();
+                panelSpinner.Visible = false;
+                btnLoadInstances.Enabled = true;
+                btnSetIntance.Enabled = true;
+                btnCheckInstance.Enabled = true;
+            } else {
+                if (Spinner.Value == 100) {
+                    expansion = -1;
+                    Spinner.Speed = 1.9F;
+                } else if (Spinner.Value == 10) {
+                    expansion = +1;
+                    Spinner.Speed = 0.5F;
+                }
+                Spinner.Value += expansion;
             }
         }
     }

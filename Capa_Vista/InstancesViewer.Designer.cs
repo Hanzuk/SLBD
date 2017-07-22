@@ -23,10 +23,17 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstancesViewer));
             this.cboInstances = new MetroFramework.Controls.MetroComboBox();
             this.btnLoadInstances = new System.Windows.Forms.Button();
             this.btnCheckInstance = new System.Windows.Forms.Button();
             this.btnSetIntance = new System.Windows.Forms.Button();
+            this.Spinner = new MetroFramework.Controls.MetroProgressSpinner();
+            this.tmSpinner = new System.Windows.Forms.Timer(this.components);
+            this.panelSpinner = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelSpinner.SuspendLayout();
             this.SuspendLayout();
             // 
             // cboInstances
@@ -74,7 +81,7 @@
             this.btnCheckInstance.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckInstance.ForeColor = System.Drawing.Color.White;
             this.btnCheckInstance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckInstance.Location = new System.Drawing.Point(400, 284);
+            this.btnCheckInstance.Location = new System.Drawing.Point(400, 351);
             this.btnCheckInstance.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckInstance.Name = "btnCheckInstance";
             this.btnCheckInstance.Size = new System.Drawing.Size(213, 50);
@@ -92,7 +99,7 @@
             this.btnSetIntance.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetIntance.ForeColor = System.Drawing.Color.White;
             this.btnSetIntance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetIntance.Location = new System.Drawing.Point(167, 284);
+            this.btnSetIntance.Location = new System.Drawing.Point(167, 351);
             this.btnSetIntance.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetIntance.Name = "btnSetIntance";
             this.btnSetIntance.Size = new System.Drawing.Size(213, 50);
@@ -101,15 +108,56 @@
             this.btnSetIntance.UseVisualStyleBackColor = false;
             this.btnSetIntance.Click += new System.EventHandler(this.btnSetIntance_Click);
             // 
+            // Spinner
+            // 
+            this.Spinner.Location = new System.Drawing.Point(83, 19);
+            this.Spinner.Maximum = 100;
+            this.Spinner.Name = "Spinner";
+            this.Spinner.Size = new System.Drawing.Size(50, 50);
+            this.Spinner.Speed = 0.5F;
+            this.Spinner.Style = MetroFramework.MetroColorStyle.Pink;
+            this.Spinner.TabIndex = 62;
+            this.Spinner.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Spinner.UseSelectable = true;
+            // 
+            // tmSpinner
+            // 
+            this.tmSpinner.Enabled = true;
+            this.tmSpinner.Interval = 10;
+            this.tmSpinner.Tick += new System.EventHandler(this.tmSpinner_Tick);
+            // 
+            // panelSpinner
+            // 
+            this.panelSpinner.Controls.Add(this.label1);
+            this.panelSpinner.Controls.Add(this.Spinner);
+            this.panelSpinner.Location = new System.Drawing.Point(282, 195);
+            this.panelSpinner.Name = "panelSpinner";
+            this.panelSpinner.Size = new System.Drawing.Size(216, 125);
+            this.panelSpinner.TabIndex = 63;
+            this.panelSpinner.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(11, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 25);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Cargando instancias...";
+            // 
             // InstancesViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 418);
+            this.ClientSize = new System.Drawing.Size(780, 485);
+            this.Controls.Add(this.panelSpinner);
             this.Controls.Add(this.btnSetIntance);
             this.Controls.Add(this.btnCheckInstance);
             this.Controls.Add(this.btnLoadInstances);
             this.Controls.Add(this.cboInstances);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InstancesViewer";
             this.Padding = new System.Windows.Forms.Padding(50, 110, 50, 80);
             this.Resizable = false;
@@ -117,6 +165,8 @@
             this.Style = MetroFramework.MetroColorStyle.Black;
             this.Text = "Selecciona una instancia de SQL";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.panelSpinner.ResumeLayout(false);
+            this.panelSpinner.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -127,5 +177,9 @@
         private System.Windows.Forms.Button btnLoadInstances;
         private System.Windows.Forms.Button btnCheckInstance;
         private System.Windows.Forms.Button btnSetIntance;
+        private MetroFramework.Controls.MetroProgressSpinner Spinner;
+        private System.Windows.Forms.Timer tmSpinner;
+        private System.Windows.Forms.Panel panelSpinner;
+        private System.Windows.Forms.Label label1;
     }
 }
