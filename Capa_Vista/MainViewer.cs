@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Negocios;
 using Capa_Conexion;
+using System.Data.SqlClient;
 
 namespace Capa_Vista
 {
@@ -99,41 +100,46 @@ namespace Capa_Vista
 
         private void btnAnalyzeColumn_Click(object sender, EventArgs e)
         {
-            /*
-            oDTDB = new LoadColumnDataCN().LoadColumnData(InstanceName);
-
-            var OrdPos = SqlDr.GetValue(0);
-            var ColName = SqlDr.GetValue(1);
-            var DataType = SqlDr.GetValue(2);
-            var CharMaxLen = SqlDr.GetValue(3);
-            var IsNullable = SqlDr.GetValue(4);
-            Console.WriteLine("ColName - " + ColName + " DataType - " + DataType + " CharMaxLen - " + CharMaxLen);*/
-        }
-
-        private void btnSearchInstances_Click(object sender, EventArgs e)
-        {
-            //Valida si el formulario ya esta abierto.
-            Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "InstancesViewer").SingleOrDefault<Form>();
-            if (existe != null)
+            foreach (DataRow row in oDTDB.Rows)
             {
-                existe.BringToFront();
+                if (listbColumns.Items.Count > 0)
+                {
+                    if (row[0].ToString() == listbColumns.SelectedValue.ToString())
+                    {
+                        label6.Text = row[0].ToString();
+                        label7.Text = row[1].ToString();
+                        label8.Text = row[2].ToString();
+                        label9.Text = row[3].ToString();
+                    }
+                }
             }
-            else
+            }
+
+            private void btnSearchInstances_Click(object sender, EventArgs e)
             {
-                InstancesViewer IW = new InstancesViewer();
-                IW.Show();
+                //Valida si el formulario ya esta abierto.
+                Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "InstancesViewer").SingleOrDefault<Form>();
+                if (existe != null)
+                {
+                    existe.BringToFront();
+                }
+                else
+                {
+                    InstancesViewer IW = new InstancesViewer();
+                    IW.Show();
+                }
             }
-        }
 
-        private void pResultado_Paint(object sender, PaintEventArgs e)
-        {
+            private void pResultado_Paint(object sender, PaintEventArgs e)
+            {
 
-        }
+            }
 
-        private void listbColumns_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            private void listbColumns_SelectedIndexChanged(object sender, EventArgs e)
+            {
 
+            }
         }
     }
-}
+
     

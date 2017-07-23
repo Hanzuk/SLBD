@@ -139,9 +139,6 @@ namespace Capa_Vista {
             // 
             // pResultado
             // 
-            this.pResultado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pResultado.BackColor = System.Drawing.Color.Transparent;
             this.pResultado.Controls.Add(this.label6);
             this.pResultado.Controls.Add(this.label5);
