@@ -8,25 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Negocios;
+using Capa_Conexion;
 
-namespace Capa_Vista {
-    public partial class MainViewer : MetroFramework.Forms.MetroForm {
+namespace Capa_Vista
+{
+    public partial class MainViewer : MetroFramework.Forms.MetroForm
+    {
 
         public string InstanceName { get; set; }
-        public MainViewer() {
+        public MainViewer()
+        {
             InitializeComponent();
         }
 
         DataTable oDTDB;
-        private void btnLoadDB_Click(object sender, EventArgs e) {
+        private void btnLoadDB_Click(object sender, EventArgs e)
+        {
             oDTDB = new LoadDataBaseCN().LoadDataBases(InstanceName);
             cboDBList.DisplayMember = "name";
             cboDBList.ValueMember = "name";
             cboDBList.DataSource = oDTDB;
             btnLoadDB.Visible = false;
             btnLoadTables.Enabled = true;
-            foreach (DataRow row in oDTDB.Rows) {
-                if (row[0].ToString() == cboDBList.SelectedValue.ToString()) {
+            foreach (DataRow row in oDTDB.Rows)
+            {
+                if (row[0].ToString() == cboDBList.SelectedValue.ToString())
+                {
                     lbOwner.Text = "Owner:   " + row[2].ToString();
                     lbSize.Text = "Size:" + row[1].ToString();
                     lbCreated.Text = "Created:   " + row[4].ToString();
@@ -34,29 +41,38 @@ namespace Capa_Vista {
             }
         }
 
-        private void btnLoadTables_Click(object sender, EventArgs e) {
+        private void btnLoadTables_Click(object sender, EventArgs e)
+        {
             List<string> listable = new LoadTableCN().LoadTables(InstanceName, cboDBList.SelectedValue.ToString());
-            if (listable.Count > 0) {
+            if (listable.Count > 0)
+            {
                 cboTables.DataSource = listable;
                 cboTables.Enabled = true;
                 lbTotalTables.Text = "Total de tablas encontradas: " + listable.Count.ToString();
                 btnLoadTables.Enabled = false;
                 btnLoadColumns.Enabled = true;
-            } else {
+            }
+            else
+            {
                 ErrorDialog.ShowDialog("¡No existen tablas para esta Base de Datos!");
             }
         }
 
-        private void btnLoadColumns_Click(object sender, EventArgs e) {
+        private void btnLoadColumns_Click(object sender, EventArgs e)
+        {
             List<string> listColumns = new LoadColumnCN().LoadColumns(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString());
             listbColumns.DataSource = listColumns;
             listbColumns.Visible = true;
         }
 
-        private void cboDBList_SelectedValueChanged(object sender, EventArgs e) {
-            foreach (DataRow row in oDTDB.Rows) {
-                if (cboDBList.Items.Count > 0) {
-                    if (row[0].ToString() == cboDBList.SelectedValue.ToString()) {
+        private void cboDBList_SelectedValueChanged(object sender, EventArgs e)
+        {
+            foreach (DataRow row in oDTDB.Rows)
+            {
+                if (cboDBList.Items.Count > 0)
+                {
+                    if (row[0].ToString() == cboDBList.SelectedValue.ToString())
+                    {
                         lbOwner.Text = "Owner:   " + row[2].ToString();
                         lbSize.Text = "Size:" + row[1].ToString();
                         lbCreated.Text = "Created:   " + row[4].ToString();
@@ -83,18 +99,41 @@ namespace Capa_Vista {
 
         private void btnAnalyzeColumn_Click(object sender, EventArgs e)
         {
+            /*
+            oDTDB = new LoadColumnDataCN().LoadColumnData(InstanceName);
 
+            var OrdPos = SqlDr.GetValue(0);
+            var ColName = SqlDr.GetValue(1);
+            var DataType = SqlDr.GetValue(2);
+            var CharMaxLen = SqlDr.GetValue(3);
+            var IsNullable = SqlDr.GetValue(4);
+            Console.WriteLine("ColName - " + ColName + " DataType - " + DataType + " CharMaxLen - " + CharMaxLen);*/
         }
 
-        private void btnSearchInstances_Click(object sender, EventArgs e) {
+        private void btnSearchInstances_Click(object sender, EventArgs e)
+        {
             //Valida si el formulario ya esta abierto.
             Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "InstancesViewer").SingleOrDefault<Form>();
-            if (existe != null) {
+            if (existe != null)
+            {
                 existe.BringToFront();
-            } else {
+            }
+            else
+            {
                 InstancesViewer IW = new InstancesViewer();
                 IW.Show();
             }
         }
+
+        private void pResultado_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listbColumns_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+    

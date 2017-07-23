@@ -10,7 +10,7 @@ namespace Capa_Conexion
 {
     public class LoadColumnDataCC
     {
-        public DataTable LoadTables(string instance, string dbname, string tbname)
+        public DataTable LoadColumnData(string instance, string dbname, string tbname)
         {
             Connection oCN = new Connection(instance);
             SqlCommand oSQLC = new SqlCommand();

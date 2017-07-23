@@ -126,6 +126,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Capa_Conexion\Capa_Conexion.csproj">
+      <Project>{868DA2C2-93FD-41D3-A779-A1EABE8AC975}</Project>
+      <Name>Capa_Conexion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Capa_Negocios\Capa_Negocios.csproj">
       <Project>{b6bc180e-e9d7-4c3d-8f30-e5f65aafcf76}</Project>
       <Name>Capa_Negocios</Name>
