@@ -12,8 +12,16 @@ namespace Capa_Negocios {
             return Task.Run(() => {
                 List<string> ListIntances = new List<string>();
                 foreach (DataRow row in new LoadInstancesCC().LoadInstances().Rows) {
-                    string connectionString = row["ServerName"] + "\\" + row["InstanceName"];
-                    ListIntances.Add(connectionString);
+                    string serverName;
+                    string instanceName = row["InstanceName"].ToString();
+                    if (!string.IsNullOrEmpty(instanceName)) {
+                        serverName = row["ServerName"] + "\\" + row["InstanceName"];
+                    } else {
+                        serverName = row["ServerName"].ToString();
+                    }
+                    ListIntances.Add(serverName);
+                    //string connectionString = row["ServerName"] + "\\" + row["InstanceName"];
+                    //ListIntances.Add(connectionString);
                 }
                 return ListIntances;
             });
