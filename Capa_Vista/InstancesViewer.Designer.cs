@@ -33,6 +33,7 @@
             this.tmSpinner = new System.Windows.Forms.Timer(this.components);
             this.panelSpinner = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelSpinner.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,11 +148,19 @@
             this.label1.TabIndex = 63;
             this.label1.Text = "Cargando instancias...";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(54, 214);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(207, 22);
+            this.textBox1.TabIndex = 64;
+            // 
             // InstancesViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 485);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panelSpinner);
             this.Controls.Add(this.btnSetIntance);
             this.Controls.Add(this.btnCheckInstance);
@@ -168,6 +177,7 @@
             this.panelSpinner.ResumeLayout(false);
             this.panelSpinner.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,5 +191,6 @@
         private System.Windows.Forms.Timer tmSpinner;
         private System.Windows.Forms.Panel panelSpinner;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

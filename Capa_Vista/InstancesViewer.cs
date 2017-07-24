@@ -43,7 +43,8 @@ namespace Capa_Vista {
             } else {
                 //Busca el Formulario principal
                 MainViewer MW = Application.OpenForms.OfType<MainViewer>().Where(x => x.Name == "MainViewer").SingleOrDefault<MainViewer>();
-                MW.InstanceName = cboInstances.SelectedValue.ToString();
+                //MW.InstanceName = cboInstances.SelectedValue.ToString();
+                MW.InstanceName = textBox1.Text;
                 MW.BtnLoadDB.Enabled = true;
                 this.Close();
             }
