@@ -11,10 +11,10 @@ namespace Capa_Conexion
 {
     public class Connection
     {
-        SqlConnection objConnection = new SqlConnection(Helper.CnnStr("Raiden"));
+        SqlConnection objConnection /*= new SqlConnection(Helper.CnnStr("Raiden"))*/;
 
         public Connection(string instance) {
-            objConnection = new SqlConnection($"Data Source={instance};Integrated Security=True");
+            objConnection = new SqlConnection(/*$"Data Source={instance};Integrated Security=True"*/Helper.CnnStr("Raiden"));
         }
 
         private bool OpenConnection() {
