@@ -38,16 +38,21 @@ namespace Capa_Vista {
         }
 
         private void btnSetIntance_Click(object sender, EventArgs e) {
-            if (cboInstances.Items.Count == 0) {
-                WarningDialog.ShowDialog("Carga las instancias antes de probar una conexión.");
-            } else {
-                //Busca el Formulario principal
-                MainViewer MW = Application.OpenForms.OfType<MainViewer>().Where(x => x.Name == "MainViewer").SingleOrDefault<MainViewer>();
-                //MW.InstanceName = cboInstances.SelectedValue.ToString();
-                MW.InstanceName = textBox1.Text;
-                MW.BtnLoadDB.Enabled = true;
-                this.Close();
-            }
+            //if (cboInstances.Items.Count == 0) {
+            //    WarningDialog.ShowDialog("Carga las instancias antes de probar una conexión.");
+            //} else {
+            //    //Busca el Formulario principal
+            //    MainViewer MW = Application.OpenForms.OfType<MainViewer>().Where(x => x.Name == "MainViewer").SingleOrDefault<MainViewer>();
+            //    //MW.InstanceName = cboInstances.SelectedValue.ToString();
+            //    MW.InstanceName = textBox1.Text;
+            //    MW.BtnLoadDB.Enabled = true;
+            //    this.Close();
+            //}
+            MainViewer MW = Application.OpenForms.OfType<MainViewer>().Where(x => x.Name == "MainViewer").SingleOrDefault<MainViewer>();
+            //MW.InstanceName = cboInstances.SelectedValue.ToString();
+            MW.InstanceName = textBox1.Text;
+            MW.BtnLoadDB.Enabled = true;
+            this.Close();
         }
 
         int expansion = 1;
