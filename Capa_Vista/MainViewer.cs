@@ -88,7 +88,7 @@ namespace Capa_Vista
             string dbname = cboDBList.SelectedItem.ToString();
             string tbname = cboTables.SelectedItem.ToString();
             string clname = listbColumns.SelectedItem.ToString();
-            List<string> listColumns1 = new LoadColumnDataCN().LoadColumnData(InstanceName, dbname, tbname,clname);
+            //List<string> listColumns1 = new LoadColumnDataCN().LoadColumnData(InstanceName, dbname, tbname,clname);
             foreach (DataRow row in oDTDB.Rows)
             {
                 if (listbColumns.Items.Count > 0)
