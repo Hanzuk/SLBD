@@ -33,7 +33,8 @@
             this.tmSpinner = new System.Windows.Forms.Timer(this.components);
             this.panelSpinner = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtInstance = new MetroFramework.Controls.MetroTextBox();
+            this.checkInstances = new MetroFramework.Controls.MetroCheckBox();
             this.panelSpinner.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,19 +149,65 @@
             this.label1.TabIndex = 63;
             this.label1.Text = "Cargando instancias...";
             // 
-            // textBox1
+            // txtInstance
             // 
-            this.textBox1.Location = new System.Drawing.Point(54, 214);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 22);
-            this.textBox1.TabIndex = 64;
+            // 
+            // 
+            // 
+            this.txtInstance.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInstance.CustomButton.Image = null;
+            this.txtInstance.CustomButton.Location = new System.Drawing.Point(300, 1);
+            this.txtInstance.CustomButton.Name = "";
+            this.txtInstance.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.txtInstance.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtInstance.CustomButton.TabIndex = 1;
+            this.txtInstance.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtInstance.CustomButton.UseSelectable = true;
+            this.txtInstance.CustomButton.Visible = false;
+            this.txtInstance.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtInstance.Lines = new string[0];
+            this.txtInstance.Location = new System.Drawing.Point(54, 233);
+            this.txtInstance.MaxLength = 32767;
+            this.txtInstance.Name = "txtInstance";
+            this.txtInstance.PasswordChar = '\0';
+            this.txtInstance.PromptText = "Ingresa tu instancia aquí";
+            this.txtInstance.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtInstance.SelectedText = "";
+            this.txtInstance.SelectionLength = 0;
+            this.txtInstance.SelectionStart = 0;
+            this.txtInstance.ShortcutsEnabled = true;
+            this.txtInstance.Size = new System.Drawing.Size(334, 35);
+            this.txtInstance.Style = MetroFramework.MetroColorStyle.Purple;
+            this.txtInstance.TabIndex = 64;
+            this.txtInstance.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txtInstance.UseSelectable = true;
+            this.txtInstance.Visible = false;
+            this.txtInstance.WaterMark = "Ingresa tu instancia aquí";
+            this.txtInstance.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtInstance.WaterMarkFont = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // checkInstances
+            // 
+            this.checkInstances.AutoSize = true;
+            this.checkInstances.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkInstances.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.checkInstances.Location = new System.Drawing.Point(54, 185);
+            this.checkInstances.Name = "checkInstances";
+            this.checkInstances.Size = new System.Drawing.Size(198, 20);
+            this.checkInstances.Style = MetroFramework.MetroColorStyle.Purple;
+            this.checkInstances.TabIndex = 65;
+            this.checkInstances.Text = "¿Las instancias no cargan?";
+            this.checkInstances.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.checkInstances.UseSelectable = true;
+            this.checkInstances.CheckedChanged += new System.EventHandler(this.checkInstances_CheckedChanged);
             // 
             // InstancesViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 485);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.checkInstances);
+            this.Controls.Add(this.txtInstance);
             this.Controls.Add(this.panelSpinner);
             this.Controls.Add(this.btnSetIntance);
             this.Controls.Add(this.btnCheckInstance);
@@ -191,6 +238,7 @@
         private System.Windows.Forms.Timer tmSpinner;
         private System.Windows.Forms.Panel panelSpinner;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private MetroFramework.Controls.MetroTextBox txtInstance;
+        private MetroFramework.Controls.MetroCheckBox checkInstances;
     }
 }

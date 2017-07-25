@@ -11,11 +11,11 @@ namespace Capa_Conexion
 {
     public class Connection
     {
-        SqlConnection objConnection /*= new SqlConnection(Helper.CnnStr("Raiden"))*/;
+        SqlConnection objConnection;
 
         public Connection(string instance) {
-            //SqlConnection objConnection = new SqlConnection($"Data Source={instance};Integrated Security=True");
-            objConnection = new SqlConnection(/*$"Data Source={instance};Integrated Security=True"*/Helper.CnnStr("Raiden"));
+            objConnection = new SqlConnection($"Data Source={instance};Integrated Security=True");
+            //objConnection = new SqlConnection(Helper.CnnStr("Raiden"));
         }
 
         private bool OpenConnection() {
@@ -35,8 +35,8 @@ namespace Capa_Conexion
                 }
                 objConnection.Close();
                 return true;
-            } catch (Exception) {
-                throw;
+            } catch (Exception e) {
+                throw e;
             } finally {
                 objConnection.Close();
             }

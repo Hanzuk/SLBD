@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Capa_Negocios {
     public class LoadInstancesCN {
-        public Task<List<string>> LoadInstances() {
+        public Task<List<string>> LoadInstances(CancellationToken ct) {
             return Task.Run(() => {
                 List<string> ListIntances = new List<string>();
                 foreach (DataRow row in new LoadInstancesCC().LoadInstances().Rows) {
