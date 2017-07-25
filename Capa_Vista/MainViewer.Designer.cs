@@ -514,7 +514,6 @@ namespace Capa_Vista {
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 21;
-            this.textBox1.Visible = false;
             // 
             // textBox2
             // 
@@ -522,7 +521,6 @@ namespace Capa_Vista {
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 22;
-            this.textBox2.Visible = false;
             // 
             // textBox3
             // 
@@ -530,7 +528,6 @@ namespace Capa_Vista {
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 23);
             this.textBox3.TabIndex = 23;
-            this.textBox3.Visible = false;
             // 
             // textBox4
             // 
@@ -538,7 +535,6 @@ namespace Capa_Vista {
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 23);
             this.textBox4.TabIndex = 24;
-            this.textBox4.Visible = false;
             // 
             // MainViewer
             // 

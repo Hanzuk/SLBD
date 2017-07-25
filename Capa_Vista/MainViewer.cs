@@ -85,25 +85,21 @@ namespace Capa_Vista
         }
 
         private void btnAnalyzeColumn_Click(object sender, EventArgs e) {
-            List<string> listColumns1 = new LoadColumnDataCN().LoadColumnData(InstanceName,cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString());
+            string dbname = cboDBList.SelectedItem.ToString();
+            string tbname = cboTables.SelectedItem.ToString();
+            string clname = listbColumns.SelectedItem.ToString();
+            //List<string> listColumns1 = new LoadColumnDataCN.LoadColumnData(InstanceName,dbname, tbname, clname);
             foreach (DataRow row in oDTDB.Rows)
             {
                 if (listbColumns.Items.Count > 0)
                 {
-                    if (row[0].ToString() == listbColumns.SelectedValue.ToString())
-                    {
                         textBox1.Text = row[0].ToString();
                         textBox2.Text = row[1].ToString();
                         textBox3.Text = row[2].ToString();
                         textBox4.Text = row[3].ToString();
-
-                        textBox1.Visible = true;
-                        textBox2.Visible = true;
-                        textBox3.Visible = true;
-                        textBox4.Visible = true;
-                    }
                 }
-            } 
+            }
+            
         }
 
 

@@ -8,9 +8,9 @@ using System.Data;
 
 namespace Capa_Negocios{
     public class LoadColumnDataCN {
-        public List<string> LoadColumnData(string instance, string dbname, string tbname){
+        public List<string> LoadColumnData(string instance, string dbname, string tbname, string clname){
             List<string> LoadColumnData = new List<string>();
-            foreach (DataRow row in new LoadColumnDataCC().LoadColumnData(instance, dbname, tbname).Rows){
+            foreach (DataRow row in new LoadColumnDataCC().LoadColumnData(instance, dbname, tbname, clname).Rows){
                 LoadColumnData.Add(row[0].ToString());
             }
             return LoadColumnData;
