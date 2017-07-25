@@ -54,6 +54,10 @@ namespace Capa_Vista {
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.pResultado.SuspendLayout();
@@ -140,6 +144,10 @@ namespace Capa_Vista {
             // pResultado
             // 
             this.pResultado.BackColor = System.Drawing.Color.Transparent;
+            this.pResultado.Controls.Add(this.textBox4);
+            this.pResultado.Controls.Add(this.textBox3);
+            this.pResultado.Controls.Add(this.textBox2);
+            this.pResultado.Controls.Add(this.textBox1);
             this.pResultado.Controls.Add(this.label6);
             this.pResultado.Controls.Add(this.label5);
             this.pResultado.Controls.Add(this.label7);
@@ -499,6 +507,39 @@ namespace Capa_Vista {
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox1.Location = new System.Drawing.Point(451, 50);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(451, 82);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 23);
+            this.textBox2.TabIndex = 22;
+            this.textBox2.Visible = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(451, 112);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 23);
+            this.textBox3.TabIndex = 23;
+            this.textBox3.Visible = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(451, 145);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 23);
+            this.textBox4.TabIndex = 24;
+            this.textBox4.Visible = false;
+            // 
             // MainViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -557,6 +598,10 @@ namespace Capa_Vista {
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSearchInstances;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox1;
 
         public Button BtnLoadDB { get => btnLoadDB; set => btnLoadDB = value; }
     }
