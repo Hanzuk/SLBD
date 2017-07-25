@@ -58,6 +58,8 @@ namespace Capa_Vista {
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.pResultado.SuspendLayout();
@@ -144,6 +146,8 @@ namespace Capa_Vista {
             // pResultado
             // 
             this.pResultado.BackColor = System.Drawing.Color.Transparent;
+            this.pResultado.Controls.Add(this.textBox5);
+            this.pResultado.Controls.Add(this.label3);
             this.pResultado.Controls.Add(this.textBox4);
             this.pResultado.Controls.Add(this.textBox3);
             this.pResultado.Controls.Add(this.textBox2);
@@ -169,9 +173,9 @@ namespace Capa_Vista {
             this.label6.Location = new System.Drawing.Point(10, 50);
             this.label6.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 19);
+            this.label6.Size = new System.Drawing.Size(85, 19);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Nombre de la columna:";
+            this.label6.Text = "Dato Mayor:";
             // 
             // label5
             // 
@@ -195,9 +199,9 @@ namespace Capa_Vista {
             this.label7.Location = new System.Drawing.Point(10, 82);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 19);
+            this.label7.Size = new System.Drawing.Size(86, 19);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Tipo de dato:";
+            this.label7.Text = "Dato Menor:";
             // 
             // label9
             // 
@@ -208,9 +212,9 @@ namespace Capa_Vista {
             this.label9.Location = new System.Drawing.Point(10, 149);
             this.label9.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 19);
+            this.label9.Size = new System.Drawing.Size(155, 19);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Is Null:";
+            this.label9.Text = "Problemas Encontrados:";
             // 
             // label8
             // 
@@ -221,9 +225,9 @@ namespace Capa_Vista {
             this.label8.Location = new System.Drawing.Point(10, 116);
             this.label8.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(192, 19);
+            this.label8.Size = new System.Drawing.Size(122, 19);
             this.label8.TabIndex = 19;
-            this.label8.Text = "Máximo caracteres permitidos:";
+            this.label8.Text = "Cantidad de datos:";
             // 
             // btnAnalyzeColumn
             // 
@@ -536,6 +540,26 @@ namespace Capa_Vista {
             this.textBox4.Size = new System.Drawing.Size(100, 23);
             this.textBox4.TabIndex = 24;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(11, 178);
+            this.label3.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 19);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Solucion:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(451, 178);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 23);
+            this.textBox5.TabIndex = 26;
+            // 
             // MainViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -598,6 +622,8 @@ namespace Capa_Vista {
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
+        private TextBox textBox5;
+        private Label label3;
 
         public Button BtnLoadDB { get => btnLoadDB; set => btnLoadDB = value; }
     }
