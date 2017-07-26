@@ -15,9 +15,9 @@ namespace Capa_Conexion
             Connection oCN = new Connection(instance);
             SqlCommand oSQLC = new SqlCommand();
             oSQLC.CommandType = CommandType.Text;
-            oSQLC.CommandText = "SELECT MIN(@column_name) FROM " + dbname + " WHERE TABLE_NAME = @TbName;";
-            oSQLC.Parameters.Add("@TbName", SqlDbType.VarChar).Value = tbname;
-            oSQLC.Parameters.Add("@column_name", SqlDbType.VarChar).Value = clname;
+            oSQLC.CommandText = $"SELECT MIN({clname}) FROM {dbname}.dbo.{tbname};";
+            //oSQLC.Parameters.Add("@TbName", SqlDbType.VarChar).Value = tbname;
+            //oSQLC.Parameters.Add("@column_name", SqlDbType.VarChar).Value = clname;
             return oCN.ExecuteQuery(oSQLC);
         }
     }

@@ -85,9 +85,9 @@ namespace Capa_Vista
         }
 
         private void btnAnalyzeColumn_Click(object sender, EventArgs e) {
-            DatoMayor();
+            //DatoMayor();
             DatoMenor();
-            TotalDatos();
+            //TotalDatos();
         }
 
         public void DatoMayor()
@@ -109,19 +109,22 @@ namespace Capa_Vista
         }
 
         public void DatoMenor() {
-            string clname = "";
-            string dbname = cboDBList.SelectedItem.ToString();
-            string tbname = cboTables.SelectedItem.ToString();
-            List<string> listMayor1 = new LoadDatoMenorCN().LoadMenor(InstanceName, dbname, tbname, clname);
-            foreach (DataRow row in oDTDB.Rows)
-            {
-                if (listbColumns.Items.Count > 0)
-                {
-                    if (clname == listbColumns.SelectedValue.ToString())
-                    {
-                        textBox2.Text = row[0].ToString();
-                    }
-                }
+            //string clname = "";
+            //string dbname = cboDBList.SelectedValue.ToString();
+            //string tbname = cboTables.SelectedValue.ToString();
+            //List<string> listMayor1 = new LoadDatoMenorCN().LoadMenor(InstanceName, dbname, tbname, listbColumns.SelectedValue.ToString());
+            //foreach (DataRow row in oDTDB.Rows)
+            //{
+            //    if (listbColumns.Items.Count > 0)
+            //    {
+            //        if (clname == listbColumns.SelectedValue.ToString())
+            //        {
+            //            textBox2.Text = row[0].ToString();
+            //        }
+            //    }
+            //}
+            foreach (string item in new LoadDatoMenorCN().LoadMenor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString())) {
+                textBox2.Text = item;
             }
         }
 
