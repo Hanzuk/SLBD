@@ -85,21 +85,61 @@ namespace Capa_Vista
         }
 
         private void btnAnalyzeColumn_Click(object sender, EventArgs e) {
+            DatoMayor();
+            DatoMenor();
+            TotalDatos();
+        }
+
+        public void DatoMayor()
+        {
+            string clname = "";
             string dbname = cboDBList.SelectedItem.ToString();
             string tbname = cboTables.SelectedItem.ToString();
-            string clname = listbColumns.SelectedItem.ToString();
-            //List<string> listColumns1 = new LoadColumnDataCN().LoadColumnData(InstanceName, dbname, tbname,clname);
+            List<string> listMayor1 = new LoadDatoMayorCN().LoadMayor(InstanceName, dbname, tbname, clname);
             foreach (DataRow row in oDTDB.Rows)
             {
                 if (listbColumns.Items.Count > 0)
                 {
+                    if (clname == listbColumns.SelectedValue.ToString())
+                    {
                         textBox1.Text = row[0].ToString();
-                        textBox2.Text = row[1].ToString();
-                        textBox3.Text = row[2].ToString();
-                        textBox4.Text = row[3].ToString();
+                    }
                 }
             }
-            
+        }
+
+        public void DatoMenor() {
+            string clname = "";
+            string dbname = cboDBList.SelectedItem.ToString();
+            string tbname = cboTables.SelectedItem.ToString();
+            List<string> listMayor1 = new LoadDatoMenorCN().LoadMenor(InstanceName, dbname, tbname, clname);
+            foreach (DataRow row in oDTDB.Rows)
+            {
+                if (listbColumns.Items.Count > 0)
+                {
+                    if (clname == listbColumns.SelectedValue.ToString())
+                    {
+                        textBox2.Text = row[0].ToString();
+                    }
+                }
+            }
+        }
+
+        public void TotalDatos() {
+            string clname = "";
+            string dbname = cboDBList.SelectedItem.ToString();
+            string tbname = cboTables.SelectedItem.ToString();
+            List<string> listMayor1 = new LoadTotalDatosCN().LoadTotal(InstanceName, dbname, tbname, clname);
+            foreach (DataRow row in oDTDB.Rows)
+            {
+                if (listbColumns.Items.Count > 0)
+                {
+                    if (clname == listbColumns.SelectedValue.ToString())
+                    {
+                        textBox1.Text = row[0].ToString();
+                    }
+                }
+            }
         }
 
         private void btnSearchInstances_Click(object sender, EventArgs e) {
