@@ -20,7 +20,7 @@ namespace Capa_Vista {
             LoadInstancesCN oLICN = new LoadInstancesCN();
             CancellationTokenSource cts = new CancellationTokenSource();
             try {
-                cts.CancelAfter(15000);
+                cts.CancelAfter(30000);
                 panelSpinner.Visible = true;
                 btnLoadInstances.Enabled = false;
                 btnSetIntance.Enabled = false;
