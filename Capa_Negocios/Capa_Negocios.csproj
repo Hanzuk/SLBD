@@ -40,14 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalyzeCN.cs" />
     <Compile Include="LoadColumnCN.cs" />
     <Compile Include="LoadColumnDataCN.cs" />
     <Compile Include="LoadDataBaseCN.cs" />
-    <Compile Include="LoadDatoMayorCN.cs" />
-    <Compile Include="LoadDatoMenorCN.cs" />
     <Compile Include="LoadInstancesCN.cs" />
     <Compile Include="LoadTableCN.cs" />
-    <Compile Include="LoadTotalDatosCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

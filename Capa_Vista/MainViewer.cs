@@ -85,12 +85,13 @@ namespace Capa_Vista
         }
 
         private void btnAnalyzeColumn_Click(object sender, EventArgs e) {
-            DatoMayor();
-            DatoMenor();
-            TotalDatos();
+            AnalyzeCN oACN = new AnalyzeCN();
+            DatoMayor(oACN);
+            DatoMenor(oACN);
+            TotalDatos(oACN);
         }
 
-        public void DatoMayor()
+        public void DatoMayor(AnalyzeCN objectACN)
         {
             //string clname = "";
             //string dbname = cboDBList.SelectedItem.ToString();
@@ -106,13 +107,12 @@ namespace Capa_Vista
             //    //    }
             //    //}
             //}
-            foreach (string item in new LoadDatoMayorCN().LoadMayor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString()))
-            {
+            foreach (string item in objectACN.LoadDatoMayor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString())) {
                 textBox1.Text = item;
             }
         }
 
-        public void DatoMenor() {
+        public void DatoMenor(AnalyzeCN objectACN) {
             //string clname = "";
             //string dbname = cboDBList.SelectedValue.ToString();
             //string tbname = cboTables.SelectedValue.ToString();
@@ -127,17 +127,17 @@ namespace Capa_Vista
             //        }
             //    }
             //}
-            foreach (string item in new LoadDatoMenorCN().LoadMenor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString())) {
+            foreach (string item in objectACN.LoadDatoMenor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString())) {
                 textBox2.Text = item;
             }
         }
 
-        public void TotalDatos() {
+        public void TotalDatos(AnalyzeCN objectACN) {
             //string clname = "";
             //string dbname = cboDBList.SelectedItem.ToString();
             //string tbname = cboTables.SelectedItem.ToString();
             //List<string> listMayor1 = new LoadTotalDatosCN().LoadTotal(InstanceName, dbname, tbname, clname);
-            foreach (string item in new LoadTotalDatosCN().LoadTotal(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString()))
+            foreach (string item in objectACN.LoadTotalDatos(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString()))
             {
                 textBox3.Text = item;
                 //if (listbColumns.Items.Count > 0)
