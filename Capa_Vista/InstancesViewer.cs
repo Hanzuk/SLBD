@@ -17,7 +17,6 @@ namespace Capa_Vista {
         }
 
         private async void btnLoadInstances_Click(object sender, EventArgs e) {
-            LoadInstancesCN oLICN = new LoadInstancesCN();
             CancellationTokenSource cts = new CancellationTokenSource();
             try {
                 cts.CancelAfter(30000);
@@ -25,7 +24,7 @@ namespace Capa_Vista {
                 btnLoadInstances.Enabled = false;
                 btnSetIntance.Enabled = false;
                 btnCheckInstance.Enabled = false;
-                cboInstances.DataSource = await oLICN.LoadInstances(cts.Token);
+                cboInstances.DataSource = await new LoadInstancesCN().LoadInstances(cts.Token);
                 tmSpinner.Start();
                 if (cts.IsCancellationRequested) {
                     ErrorDialog.ShowDialog("Ha ocurrido un error al cargar las instancias.");
