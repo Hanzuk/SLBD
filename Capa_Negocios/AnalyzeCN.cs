@@ -8,28 +8,28 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocios {
     public class AnalyzeCN {
-        public List<string> LoadDatoMayor(string instanceName, string dbname, string tbname, string clname) {
-            List<string> listMayor = new List<string>();
+        public string LoadDatoMayor(string instanceName, string dbname, string tbname, string clname) {
+            string datoMayor = "";
             foreach (DataRow row in new AnalyzeCC().LoadDatoMayor(instanceName, dbname, tbname, clname).Rows) {
-                listMayor.Add(row[0].ToString());
+                datoMayor = row[0].ToString();
             }
-            return listMayor;
+            return datoMayor;
         }
 
-        public List<string> LoadDatoMenor(string instanceName, string dbname, string tbname, string clname) {
-            List<string> listMayor = new List<string>();
+        public string LoadDatoMenor(string instanceName, string dbname, string tbname, string clname) {
+            string datoMenor = "";
             foreach (DataRow row in new AnalyzeCC().LoadDatoMenor(instanceName, dbname, tbname, clname).Rows) {
-                listMayor.Add(row[0].ToString());
+                datoMenor = row[0].ToString();
             }
-            return listMayor;
+            return datoMenor;
         }
 
-        public List<string> LoadTotalDatos(string instanceName, string dbname, string tbname, string clname) {
-            List<string> listTotal = new List<string>();
-            foreach (DataRow row in new LoadTotalDatosCC().LoadTotal(instanceName, dbname, tbname, clname).Rows) {
-                listTotal.Add(row[0].ToString());
+        public string LoadTotalDatos(string instanceName, string dbname, string tbname, string clname) {
+            string totalDatos = "";
+            foreach (DataRow row in new AnalyzeCC().LoadTotalDatos(instanceName, dbname, tbname, clname).Rows) {
+                totalDatos = row[0].ToString();
             }
-            return listTotal;
+            return totalDatos;
         }
     }
 }
