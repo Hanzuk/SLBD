@@ -24,7 +24,7 @@ namespace Capa_Vista {
                 btnLoadInstances.Enabled = false;
                 btnSetIntance.Enabled = false;
                 btnCheckInstance.Enabled = false;
-                cboInstances.DataSource = await new LoadInstancesCN().LoadInstances(cts.Token);
+                cboInstances.DataSource = await new LoadInstancesCN().LoadInstancesAsync(cts.Token);
                 tmSpinner.Start();
                 if (cts.IsCancellationRequested) {
                     ErrorDialog.ShowDialog("Ha ocurrido un error al cargar las instancias.");

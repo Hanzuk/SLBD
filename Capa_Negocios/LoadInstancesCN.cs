@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocios {
     public class LoadInstancesCN {
-        public Task<List<string>> LoadInstances(CancellationToken ct) {
+        public Task<List<string>> LoadInstancesAsync(CancellationToken ct) {
             return Task.Run(() => {
                 List<string> ListIntances = new List<string>();
                 foreach (DataRow row in new LoadInstancesCC().LoadInstances().Rows) {
