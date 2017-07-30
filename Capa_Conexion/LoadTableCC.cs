@@ -12,7 +12,7 @@ namespace Capa_Conexion {
             Connection oCN = new Connection(instance);
             SqlCommand oSQLC = new SqlCommand();
             oSQLC.CommandType = CommandType.Text;
-            oSQLC.CommandText = $"SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE FROM {dbname}.INFORMATION_SCHEMA.TABLES ORDER BY TABLE_SCHEMA ASC;";
+            oSQLC.CommandText = $"SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE FROM {dbname}.INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME ASC;";
             return oCN.ExecuteQuery(oSQLC);
         }
     }
