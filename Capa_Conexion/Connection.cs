@@ -14,7 +14,7 @@ namespace Capa_Conexion
         SqlConnection objConnection;
 
         public Connection(string instance) {
-            objConnection = new SqlConnection($"Data Source={instance};Integrated Security=True");
+            objConnection = new SqlConnection($"Data Source={instance};Initial Catalog=master;Integrated Security=True");
             //objConnection = new SqlConnection(Helper.CnnStr("Raiden"));
         }
 

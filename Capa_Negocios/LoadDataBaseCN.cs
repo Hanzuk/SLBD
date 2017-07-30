@@ -10,9 +10,17 @@ namespace Capa_Negocios
 {
     public class LoadDataBaseCN
     {
-        public DataTable LoadDataBases(string instance) {
-            LoadDataBaseCC oLDBCC = new LoadDataBaseCC();
-            return oLDBCC.LoadDataBases(instance);
+        public List<Database> LoadDataBases(string instance) {
+            List<Database> listDB = new List<Database>();
+            foreach (DataRow row in new LoadDataBaseCC().LoadDataBases(instance).Rows) {
+                listDB.Add(new Database {
+                    Name = row[0].ToString(),
+                    Size = row[1].ToString(),
+                    Owner = row[2].ToString(),
+                    Created = row[4].ToString()
+                });
+            }
+            return listDB;
         }
     }
 }

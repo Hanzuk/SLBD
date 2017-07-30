@@ -20,31 +20,41 @@ namespace Capa_Vista
             InitializeComponent();
         }
 
-        DataTable oDTDB;
+        List<Database> listDB = new List<Database>();
+        List<Table> listTB = new List<Table>();
+        
         private void btnLoadDB_Click(object sender, EventArgs e) {
-            oDTDB = new LoadDataBaseCN().LoadDataBases(InstanceName);
-            cboDBList.DisplayMember = "name";
-            cboDBList.ValueMember = "name";
-            cboDBList.DataSource = oDTDB;
+            listDB = new LoadDataBaseCN().LoadDataBases(InstanceName);
+            cboDBList.DisplayMember = "Name";
+            cboDBList.ValueMember = "Name";
+            cboDBList.DataSource = listDB;
             btnLoadDB.Visible = false;
             btnLoadTables.Enabled = true;
-            foreach (DataRow row in oDTDB.Rows) {
-                if (row[0].ToString() == cboDBList.SelectedValue.ToString()) {
-                    lbOwner.Text = "Owner:   " + row[2].ToString();
-                    lbSize.Text = "Size:" + row[1].ToString();
-                    lbCreated.Text = "Created:   " + row[4].ToString();
+            foreach (Database item in listDB) {
+                if (item.Name == cboDBList.SelectedValue.ToString()) {
+                    lbOwner.Text = $"Owner:   {item.Owner}";
+                    lbSize.Text = $"Size:{item.Size}";
+                    lbCreated.Text = $"Created:   {item.Created}";
                 }
             }
         }
 
         private void btnLoadTables_Click(object sender, EventArgs e) {
-            List<string> listable = new LoadTableCN().LoadTables(InstanceName, cboDBList.SelectedValue.ToString());
-            if (listable.Count > 0) {
-                cboTables.DataSource = listable;
+            listTB = new LoadTableCN().LoadTables(InstanceName, cboDBList.SelectedValue.ToString());
+            if (listTB.Count > 0) {
+                cboTables.DisplayMember = "Name";
+                cboTables.ValueMember = "Name";
+                cboTables.DataSource = listTB;
                 cboTables.Enabled = true;
-                lbTotalTables.Text = "Total de tablas encontradas: " + listable.Count.ToString();
                 btnLoadTables.Enabled = false;
                 btnLoadColumns.Enabled = true;
+                lbTotalTables.Text = "Total de tablas encontradas: " + listTB.Count.ToString();
+                foreach (Table item in listTB) {
+                    if (item.Name.Equals(cboTables.SelectedValue.ToString())) {
+                        lbTableSchema.Text = $"Table Schema:   {item.Schema}";
+                        lbTableType.Text = $"Table Type:   {item.Type}";
+                    }
+                }
             } else {
                 ErrorDialog.ShowDialog("¡No existen tablas para esta Base de Datos!");
             }
@@ -57,12 +67,12 @@ namespace Capa_Vista
         }
 
         private void cboDBList_SelectedValueChanged(object sender, EventArgs e) {
-            foreach (DataRow row in oDTDB.Rows) {
+            foreach (Database item in listDB) {
                 if (cboDBList.Items.Count > 0) {
-                    if (row[0].ToString() == cboDBList.SelectedValue.ToString()) {
-                        lbOwner.Text = "Owner:   " + row[2].ToString();
-                        lbSize.Text = "Size:" + row[1].ToString();
-                        lbCreated.Text = "Created:   " + row[4].ToString();
+                    if (item.Name == cboDBList.SelectedValue.ToString()) {
+                        lbOwner.Text = $"Owner:   {item.Owner}";
+                        lbSize.Text = $"Size:{item.Size}";
+                        lbCreated.Text = $"Created:   {item.Created}";
                     }
                 }
             }
@@ -71,8 +81,10 @@ namespace Capa_Vista
             cboTables.Enabled = false;
             cboTables.Items.Clear();
 
-            //Limpia el Label que carga el total de tablas.
+            //Limpia el Label que carga el total de tablas, el schema y el tipo.
             lbTotalTables.Text = "";
+            lbTableSchema.Text = "";
+            lbTableType.Text = "";
 
             //Oculta y limpia el ListBox que carga las columnas.
             listbColumns.Visible = false;
@@ -84,6 +96,19 @@ namespace Capa_Vista
             btnLoadColumns.Enabled = false;
         }
 
+        private void cboTables_SelectedValueChanged(object sender, EventArgs e) {
+            if (cboTables.SelectedValue != null) {
+                foreach (Table item in listTB) {
+                    if (cboTables.Items.Count > 0) {
+                        if (item.Name == cboTables.SelectedValue.ToString()) {
+                            lbTableSchema.Text = $"Table Schema:   {item.Schema}";
+                            lbTableType.Text = $"Table Type:   {item.Type}";
+                        }
+                    }
+                }
+            }
+        }
+
         private void btnAnalyzeColumn_Click(object sender, EventArgs e) {
             AnalyzeCN oACN = new AnalyzeCN();
             DatoMayor(oACN);
@@ -91,17 +116,34 @@ namespace Capa_Vista
             TotalDatos(oACN);
         }
 
-        public void DatoMayor(AnalyzeCN objectACN)
-        {
-            textBox1.Text = objectACN.LoadDatoMayor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString());
+        public void DatoMayor(AnalyzeCN objectACN) {
+            string schema = "";
+            foreach (Table item in listTB) {
+                if (item.Name.Equals(cboTables.SelectedValue.ToString())) {
+                    schema = item.Schema;
+                }
+            }
+            lbDatoMayor.Text = objectACN.LoadDatoMayor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
         }
 
         public void DatoMenor(AnalyzeCN objectACN) {
-            textBox2.Text = objectACN.LoadDatoMenor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString());
+            string schema = "";
+            foreach (Table item in listTB) {
+                if (item.Name.Equals(cboTables.SelectedValue.ToString())) {
+                    schema = item.Schema;
+                }
+            }
+            lbDatoMenor.Text = objectACN.LoadDatoMenor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
         }
 
         public void TotalDatos(AnalyzeCN objectACN) {
-            textBox3.Text = objectACN.LoadTotalDatos(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), listbColumns.SelectedValue.ToString());
+            string schema = "";
+            foreach (Table item in listTB) {
+                if (item.Name.Equals(cboTables.SelectedValue.ToString())) {
+                    schema = item.Schema;
+                }
+            }
+            lbTotalDatos.Text = objectACN.LoadTotalDatos(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
         }
 
         private void btnSearchInstances_Click(object sender, EventArgs e) {
@@ -115,13 +157,8 @@ namespace Capa_Vista
             }
         }
 
-        private void pResultado_Paint(object sender, PaintEventArgs e) {
-            
-        }
-
         private void listbColumns_SelectedIndexChanged(object sender, EventArgs e){
             btnAnalyzeColumn.Enabled = true;
-
         }
     }
 }

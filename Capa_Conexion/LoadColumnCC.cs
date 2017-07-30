@@ -12,7 +12,7 @@ namespace Capa_Conexion {
             Connection oCN = new Connection(instance);
             SqlCommand oSQLC = new SqlCommand();
             oSQLC.CommandType = CommandType.Text;
-            oSQLC.CommandText = "SELECT COLUMN_NAME FROM " + dbname + ".INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @TbName;";
+            oSQLC.CommandText = $"SELECT COLUMN_NAME FROM {dbname}.INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @TbName;";
             oSQLC.Parameters.Add("@TbName", SqlDbType.VarChar).Value = tbname;
             return oCN.ExecuteQuery(oSQLC);
         }

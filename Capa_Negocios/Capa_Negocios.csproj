@@ -41,12 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalyzeCN.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="LoadColumnCN.cs" />
-    <Compile Include="LoadColumnDataCN.cs" />
     <Compile Include="LoadDataBaseCN.cs" />
     <Compile Include="LoadInstancesCN.cs" />
     <Compile Include="LoadTableCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Capa_Conexion\Capa_Conexion.csproj">
