@@ -20,19 +20,11 @@ namespace Capa_Vista {
             CancellationTokenSource cts = new CancellationTokenSource();
             try {
                 cts.CancelAfter(30000);
-                panelSpinner.Visible = true;
-                btnLoadInstances.Enabled = false;
-                btnSetIntance.Enabled = false;
-                btnCheckInstance.Enabled = false;
+                ShowPreLoader("Cargando instancias...");
                 cboInstances.DataSource = await new LoadInstancesCN().LoadInstancesAsync(cts.Token);
-                tmSpinner.Start();
                 if (cts.IsCancellationRequested) {
                     ErrorDialog.ShowDialog("Ha ocurrido un error al cargar las instancias.");
-                    panelSpinner.Visible = false;
-                    btnLoadInstances.Enabled = true;
-                    btnSetIntance.Enabled = true;
-                    btnCheckInstance.Enabled = true;
-                    tmSpinner.Stop();
+                    HidePreLoader();
                 }
             } catch (OperationCanceledException) {
                 ErrorDialog.ShowDialog("Ha ocurrido un error al cargar las instancias.");
@@ -41,27 +33,41 @@ namespace Capa_Vista {
             }
         }
 
-        private void btnCheckInstance_Click(object sender, EventArgs e) {
-            if (checkInstances.Checked) {
-                if (txtInstance.Text.Equals("")) {
-                    WarningDialog.ShowDialog("Ingresa tu instancias antes de probar la conexión.");
-                } else {
-                    if (new LoadInstancesCN().TestConnection(txtInstance.Text)) {
-                        SuccessDialog.ShowDialog("No hay ningún problema con la conexión.");
+        private async void btnCheckInstance_Click(object sender, EventArgs e) {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            try {
+                cts.CancelAfter(40000);
+                if (checkInstances.Checked) {
+                    if (txtInstance.Text.Equals("")) {
+                        WarningDialog.ShowDialog("Ingresa tu instancia antes de probar la conexión.");
                     } else {
-                        ErrorDialog.ShowDialog("Esta ocurriendo un error con la conexión.");
+                        ShowPreLoader("Probando la conexión...");
+                        if (await new LoadInstancesCN().TestConnectionAsync(txtInstance.Text, cts.Token)) {
+                            SuccessDialog.ShowDialog("No hay ningún problema con la conexión.");
+                            HidePreLoader();
+                        } else {
+                            ErrorDialog.ShowDialog("Esta ocurriendo un error con la conexión.");
+                            HidePreLoader();
+                        }
+                    }
+                } else {
+                    if (cboInstances.Items.Count == 0) {
+                        WarningDialog.ShowDialog("Carga las instancia antes de probar una conexión.");
+                    } else {
+                        ShowPreLoader("Probando la conexión...");
+                        if (await new LoadInstancesCN().TestConnectionAsync(cboInstances.SelectedValue.ToString(), cts.Token)) {
+                            SuccessDialog.ShowDialog("No hay ningún problema con la conexión.");
+                            HidePreLoader();
+                        } else {
+                            ErrorDialog.ShowDialog("Esta ocurriendo un error con la conexión.");
+                            HidePreLoader();
+                        }
                     }
                 }
-            } else {
-                if (cboInstances.Items.Count == 0) {
-                    WarningDialog.ShowDialog("Carga las instancias antes de probar una conexión.");
-                } else {
-                    if (new LoadInstancesCN().TestConnection(cboInstances.SelectedValue.ToString())) {
-                        SuccessDialog.ShowDialog("No hay ningún problema con la conexión.");
-                    } else {
-                        ErrorDialog.ShowDialog("Esta ocurriendo un error con la conexión.");
-                    }
-                }
+            } catch (OperationCanceledException) {
+                ErrorDialog.ShowDialog("Ha ocurrido un error al probar la conexión.");
+            } catch {
+                ErrorDialog.ShowDialog("Ha ocurrido un error al probar la conexión.");
             }
         }
 
@@ -114,6 +120,23 @@ namespace Capa_Vista {
             } else {
                 txtInstance.Visible = false;
             }
+        }
+
+        private void ShowPreLoader(string text) {
+            panelSpinner.Visible = true;
+            lbLoader.Text = text;
+            btnLoadInstances.Enabled = false;
+            btnSetIntance.Enabled = false;
+            btnCheckInstance.Enabled = false;
+            tmSpinner.Start();
+        }
+
+        private void HidePreLoader() {
+            panelSpinner.Visible = false;
+            btnLoadInstances.Enabled = true;
+            btnSetIntance.Enabled = true;
+            btnCheckInstance.Enabled = true;
+            tmSpinner.Stop();
         }
     }
 }

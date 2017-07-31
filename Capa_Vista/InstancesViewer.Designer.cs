@@ -32,7 +32,7 @@
             this.Spinner = new MetroFramework.Controls.MetroProgressSpinner();
             this.tmSpinner = new System.Windows.Forms.Timer(this.components);
             this.panelSpinner = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbLoader = new System.Windows.Forms.Label();
             this.txtInstance = new MetroFramework.Controls.MetroTextBox();
             this.checkInstances = new MetroFramework.Controls.MetroCheckBox();
             this.panelSpinner.SuspendLayout();
@@ -50,7 +50,7 @@
             this.cboInstances.Margin = new System.Windows.Forms.Padding(4);
             this.cboInstances.Name = "cboInstances";
             this.cboInstances.PromptText = "Instancias disponibles";
-            this.cboInstances.Size = new System.Drawing.Size(334, 35);
+            this.cboInstances.Size = new System.Drawing.Size(464, 35);
             this.cboInstances.Style = MetroFramework.MetroColorStyle.Purple;
             this.cboInstances.TabIndex = 44;
             this.cboInstances.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -65,7 +65,7 @@
             this.btnLoadInstances.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadInstances.ForeColor = System.Drawing.Color.White;
             this.btnLoadInstances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoadInstances.Location = new System.Drawing.Point(513, 114);
+            this.btnLoadInstances.Location = new System.Drawing.Point(617, 114);
             this.btnLoadInstances.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadInstances.Name = "btnLoadInstances";
             this.btnLoadInstances.Size = new System.Drawing.Size(213, 50);
@@ -83,7 +83,7 @@
             this.btnCheckInstance.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckInstance.ForeColor = System.Drawing.Color.White;
             this.btnCheckInstance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckInstance.Location = new System.Drawing.Point(400, 351);
+            this.btnCheckInstance.Location = new System.Drawing.Point(452, 449);
             this.btnCheckInstance.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckInstance.Name = "btnCheckInstance";
             this.btnCheckInstance.Size = new System.Drawing.Size(213, 50);
@@ -101,7 +101,7 @@
             this.btnSetIntance.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetIntance.ForeColor = System.Drawing.Color.White;
             this.btnSetIntance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetIntance.Location = new System.Drawing.Point(167, 351);
+            this.btnSetIntance.Location = new System.Drawing.Point(219, 449);
             this.btnSetIntance.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetIntance.Name = "btnSetIntance";
             this.btnSetIntance.Size = new System.Drawing.Size(213, 50);
@@ -130,24 +130,23 @@
             // 
             // panelSpinner
             // 
-            this.panelSpinner.Controls.Add(this.label1);
+            this.panelSpinner.Controls.Add(this.lbLoader);
             this.panelSpinner.Controls.Add(this.Spinner);
-            this.panelSpinner.Location = new System.Drawing.Point(282, 195);
+            this.panelSpinner.Location = new System.Drawing.Point(334, 289);
             this.panelSpinner.Name = "panelSpinner";
             this.panelSpinner.Size = new System.Drawing.Size(216, 125);
             this.panelSpinner.TabIndex = 63;
             this.panelSpinner.Visible = false;
             // 
-            // label1
+            // lbLoader
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 25);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "Cargando instancias...";
+            this.lbLoader.AutoSize = true;
+            this.lbLoader.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoader.ForeColor = System.Drawing.Color.White;
+            this.lbLoader.Location = new System.Drawing.Point(11, 82);
+            this.lbLoader.Name = "lbLoader";
+            this.lbLoader.Size = new System.Drawing.Size(0, 25);
+            this.lbLoader.TabIndex = 63;
             // 
             // txtInstance
             // 
@@ -156,7 +155,7 @@
             // 
             this.txtInstance.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInstance.CustomButton.Image = null;
-            this.txtInstance.CustomButton.Location = new System.Drawing.Point(300, 1);
+            this.txtInstance.CustomButton.Location = new System.Drawing.Point(430, 1);
             this.txtInstance.CustomButton.Name = "";
             this.txtInstance.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtInstance.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -176,7 +175,7 @@
             this.txtInstance.SelectionLength = 0;
             this.txtInstance.SelectionStart = 0;
             this.txtInstance.ShortcutsEnabled = true;
-            this.txtInstance.Size = new System.Drawing.Size(334, 35);
+            this.txtInstance.Size = new System.Drawing.Size(464, 35);
             this.txtInstance.Style = MetroFramework.MetroColorStyle.Purple;
             this.txtInstance.TabIndex = 64;
             this.txtInstance.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -205,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 485);
+            this.ClientSize = new System.Drawing.Size(884, 563);
             this.Controls.Add(this.checkInstances);
             this.Controls.Add(this.txtInstance);
             this.Controls.Add(this.panelSpinner);
@@ -215,7 +214,7 @@
             this.Controls.Add(this.cboInstances);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InstancesViewer";
-            this.Padding = new System.Windows.Forms.Padding(50, 110, 50, 80);
+            this.Padding = new System.Windows.Forms.Padding(50, 110, 50, 60);
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Black;
@@ -237,7 +236,7 @@
         private MetroFramework.Controls.MetroProgressSpinner Spinner;
         private System.Windows.Forms.Timer tmSpinner;
         private System.Windows.Forms.Panel panelSpinner;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbLoader;
         private MetroFramework.Controls.MetroTextBox txtInstance;
         private MetroFramework.Controls.MetroCheckBox checkInstances;
     }

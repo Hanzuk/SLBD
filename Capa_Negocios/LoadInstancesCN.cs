@@ -28,8 +28,10 @@ namespace Capa_Negocios {
             });
         }
 
-        public bool TestConnection(string instance) {
-            return new Connection(instance).TestConnection();
+        public Task<bool> TestConnectionAsync(string instance, CancellationToken ct) {
+            return Task.Run(() => {
+                return new Connection(instance).TestConnection();
+            });
         }
     }
 }
