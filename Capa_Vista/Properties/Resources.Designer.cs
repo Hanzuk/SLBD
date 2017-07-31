@@ -63,19 +63,9 @@ namespace Capa_Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap column {
+        internal static System.Drawing.Bitmap Database_38px {
             get {
-                object obj = ResourceManager.GetObject("column", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap database {
-            get {
-                object obj = ResourceManager.GetObject("database", resourceCulture);
+                object obj = ResourceManager.GetObject("Database_38px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +103,19 @@ namespace Capa_Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap table_grid {
+        internal static System.Drawing.Bitmap Table_38px {
             get {
-                object obj = ResourceManager.GetObject("table_grid", resourceCulture);
+                object obj = ResourceManager.GetObject("Table_38px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap View_Column_38px {
+            get {
+                object obj = ResourceManager.GetObject("View Column_38px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

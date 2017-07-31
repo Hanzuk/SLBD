@@ -152,5 +152,14 @@
   <ItemGroup>
     <None Include="Resources\Error01.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database_38px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table_38px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View Column_38px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
