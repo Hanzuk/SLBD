@@ -41,7 +41,7 @@ namespace Capa_Vista
 
         List<Database> listDB = new List<Database>();
         List<Table> listTB = new List<Table>();
-        List<string> Detalle = new List<string>();
+        List<Reporte> Detalle = new List<Reporte>();
         
         private void btnLoadDB_Click(object sender, EventArgs e) {
             listDB = new LoadDataBaseCN().LoadDataBases(InstanceName);
@@ -188,9 +188,9 @@ namespace Capa_Vista
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            foreach (string item in Detalle)
+            foreach (Reporte item in Detalle)
             {
-                if (item.ToString() == libTAnalizada.SelectedValue.ToString())
+                if (item.TBName == libTAnalizada.SelectedValue.ToString())
                 {
                     dtgTAnalizadas.Rows.Add(cboDBList.SelectedValue.ToString(), libTAnalizada.SelectedValue.ToString(), listbColumns.SelectedValue.ToString());
                 }
@@ -200,11 +200,12 @@ namespace Capa_Vista
 
         public void guardarDetalle()
         {
-            foreach (string item in Detalle)
+
+            foreach (Reporte item in Detalle)
             {
-                Detalle.Add(cboDBList.SelectedValue.ToString());
-                Detalle.Add(libTAnalizada.SelectedValue.ToString());
-                Detalle.Add(listbColumns.SelectedValue.ToString());
+                item.DBName = cboDBList.SelectedValue.ToString();
+                item.TBName = libTAnalizada.SelectedValue.ToString();
+                item.CLName = listbColumns.SelectedValue.ToString();
                 con = con + 1;
             }
         }
