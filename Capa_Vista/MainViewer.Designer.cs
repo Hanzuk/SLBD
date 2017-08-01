@@ -48,10 +48,12 @@ namespace Capa_Vista {
             this.btnAnalyzeColumn = new System.Windows.Forms.Button();
             this.btnLoadColumns = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbTotalTables = new System.Windows.Forms.Label();
             this.btnLoadTables = new System.Windows.Forms.Button();
             this.cboTables = new MetroFramework.Controls.MetroComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLoadDB = new System.Windows.Forms.Button();
             this.lbCreated = new System.Windows.Forms.Label();
@@ -59,10 +61,13 @@ namespace Capa_Vista {
             this.lbOwner = new System.Windows.Forms.Label();
             this.cboDBList = new MetroFramework.Controls.MetroComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.btnDetalle = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.libTAnalizada = new System.Windows.Forms.ListBox();
+            this.dtgTAnalizadas = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,6 +75,8 @@ namespace Capa_Vista {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTAnalizadas)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -84,7 +91,7 @@ namespace Capa_Vista {
             this.metroTabControl1.Location = new System.Drawing.Point(45, 100);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1280, 657);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroTabControl1.TabIndex = 0;
@@ -118,7 +125,7 @@ namespace Capa_Vista {
             this.metroTabPage1.ForeColor = System.Drawing.Color.White;
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 9;
+            this.metroTabPage1.HorizontalScrollbarSize = 3;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 47);
             this.metroTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabPage1.Name = "metroTabPage1";
@@ -128,7 +135,7 @@ namespace Capa_Vista {
             this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.metroTabPage1.VerticalScrollbarSize = 3;
             // 
             // lbTableType
             // 
@@ -139,7 +146,7 @@ namespace Capa_Vista {
             this.lbTableType.Location = new System.Drawing.Point(304, 180);
             this.lbTableType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTableType.Name = "lbTableType";
-            this.lbTableType.Size = new System.Drawing.Size(0, 23);
+            this.lbTableType.Size = new System.Drawing.Size(0, 19);
             this.lbTableType.TabIndex = 63;
             // 
             // lbTableSchema
@@ -151,7 +158,7 @@ namespace Capa_Vista {
             this.lbTableSchema.Location = new System.Drawing.Point(68, 180);
             this.lbTableSchema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTableSchema.Name = "lbTableSchema";
-            this.lbTableSchema.Size = new System.Drawing.Size(0, 23);
+            this.lbTableSchema.Size = new System.Drawing.Size(0, 19);
             this.lbTableSchema.TabIndex = 62;
             // 
             // panel2
@@ -174,7 +181,7 @@ namespace Capa_Vista {
             this.listbColumns.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listbColumns.ForeColor = System.Drawing.Color.Silver;
             this.listbColumns.FormattingEnabled = true;
-            this.listbColumns.ItemHeight = 25;
+            this.listbColumns.ItemHeight = 20;
             this.listbColumns.Location = new System.Drawing.Point(0, 0);
             this.listbColumns.Margin = new System.Windows.Forms.Padding(0);
             this.listbColumns.Name = "listbColumns";
@@ -231,7 +238,7 @@ namespace Capa_Vista {
             this.lbSolucion.Location = new System.Drawing.Point(227, 230);
             this.lbSolucion.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.lbSolucion.Name = "lbSolucion";
-            this.lbSolucion.Size = new System.Drawing.Size(0, 28);
+            this.lbSolucion.Size = new System.Drawing.Size(0, 21);
             this.lbSolucion.TabIndex = 31;
             // 
             // lbProblemas
@@ -243,7 +250,7 @@ namespace Capa_Vista {
             this.lbProblemas.Location = new System.Drawing.Point(227, 192);
             this.lbProblemas.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.lbProblemas.Name = "lbProblemas";
-            this.lbProblemas.Size = new System.Drawing.Size(0, 28);
+            this.lbProblemas.Size = new System.Drawing.Size(0, 21);
             this.lbProblemas.TabIndex = 30;
             // 
             // lbTotalDatos
@@ -255,7 +262,7 @@ namespace Capa_Vista {
             this.lbTotalDatos.Location = new System.Drawing.Point(227, 131);
             this.lbTotalDatos.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.lbTotalDatos.Name = "lbTotalDatos";
-            this.lbTotalDatos.Size = new System.Drawing.Size(0, 28);
+            this.lbTotalDatos.Size = new System.Drawing.Size(0, 21);
             this.lbTotalDatos.TabIndex = 29;
             // 
             // lbDatoMenor
@@ -267,7 +274,7 @@ namespace Capa_Vista {
             this.lbDatoMenor.Location = new System.Drawing.Point(227, 93);
             this.lbDatoMenor.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.lbDatoMenor.Name = "lbDatoMenor";
-            this.lbDatoMenor.Size = new System.Drawing.Size(0, 28);
+            this.lbDatoMenor.Size = new System.Drawing.Size(0, 21);
             this.lbDatoMenor.TabIndex = 28;
             // 
             // lbDatoMayor
@@ -279,7 +286,7 @@ namespace Capa_Vista {
             this.lbDatoMayor.Location = new System.Drawing.Point(227, 55);
             this.lbDatoMayor.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.lbDatoMayor.Name = "lbDatoMayor";
-            this.lbDatoMayor.Size = new System.Drawing.Size(0, 28);
+            this.lbDatoMayor.Size = new System.Drawing.Size(0, 21);
             this.lbDatoMayor.TabIndex = 27;
             // 
             // label3
@@ -291,7 +298,7 @@ namespace Capa_Vista {
             this.label3.Location = new System.Drawing.Point(12, 230);
             this.label3.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 28);
+            this.label3.Size = new System.Drawing.Size(73, 21);
             this.label3.TabIndex = 25;
             this.label3.Text = "Solucion:";
             // 
@@ -304,7 +311,7 @@ namespace Capa_Vista {
             this.label6.Location = new System.Drawing.Point(12, 55);
             this.label6.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 28);
+            this.label6.Size = new System.Drawing.Size(95, 21);
             this.label6.TabIndex = 17;
             this.label6.Text = "Dato Mayor:";
             // 
@@ -317,7 +324,7 @@ namespace Capa_Vista {
             this.label5.Location = new System.Drawing.Point(10, 3);
             this.label5.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 40);
+            this.label5.Size = new System.Drawing.Size(129, 31);
             this.label5.TabIndex = 16;
             this.label5.Text = "Resultados";
             // 
@@ -330,7 +337,7 @@ namespace Capa_Vista {
             this.label7.Location = new System.Drawing.Point(13, 93);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 28);
+            this.label7.Size = new System.Drawing.Size(97, 21);
             this.label7.TabIndex = 18;
             this.label7.Text = "Dato Menor:";
             // 
@@ -343,7 +350,7 @@ namespace Capa_Vista {
             this.label9.Location = new System.Drawing.Point(12, 192);
             this.label9.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(215, 28);
+            this.label9.Size = new System.Drawing.Size(175, 21);
             this.label9.TabIndex = 20;
             this.label9.Text = "Problemas Encontrados:";
             // 
@@ -356,7 +363,7 @@ namespace Capa_Vista {
             this.label8.Location = new System.Drawing.Point(13, 131);
             this.label8.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(168, 28);
+            this.label8.Size = new System.Drawing.Size(139, 21);
             this.label8.TabIndex = 19;
             this.label8.Text = "Cantidad de datos:";
             // 
@@ -409,9 +416,21 @@ namespace Capa_Vista {
             this.label4.Location = new System.Drawing.Point(68, 265);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(213, 30);
+            this.label4.Size = new System.Drawing.Size(173, 25);
             this.label4.TabIndex = 55;
             this.label4.Text = "Columnas de la tabla";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Capa_Vista.Properties.Resources.View_Column_38px;
+            this.pictureBox3.Location = new System.Drawing.Point(4, 260);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 54;
+            this.pictureBox3.TabStop = false;
             // 
             // lbTotalTables
             // 
@@ -422,7 +441,7 @@ namespace Capa_Vista {
             this.lbTotalTables.Location = new System.Drawing.Point(678, 143);
             this.lbTotalTables.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTotalTables.Name = "lbTotalTables";
-            this.lbTotalTables.Size = new System.Drawing.Size(0, 23);
+            this.lbTotalTables.Size = new System.Drawing.Size(0, 19);
             this.lbTotalTables.TabIndex = 53;
             // 
             // btnLoadTables
@@ -452,11 +471,11 @@ namespace Capa_Vista {
             this.cboTables.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTables.ForeColor = System.Drawing.Color.White;
             this.cboTables.FormattingEnabled = true;
-            this.cboTables.ItemHeight = 24;
+            this.cboTables.ItemHeight = 23;
             this.cboTables.Location = new System.Drawing.Point(259, 135);
             this.cboTables.Margin = new System.Windows.Forms.Padding(4);
             this.cboTables.Name = "cboTables";
-            this.cboTables.Size = new System.Drawing.Size(405, 30);
+            this.cboTables.Size = new System.Drawing.Size(405, 29);
             this.cboTables.Style = MetroFramework.MetroColorStyle.Purple;
             this.cboTables.TabIndex = 51;
             this.cboTables.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -472,9 +491,21 @@ namespace Capa_Vista {
             this.label2.Location = new System.Drawing.Point(68, 135);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 30);
+            this.label2.Size = new System.Drawing.Size(58, 25);
             this.label2.TabIndex = 50;
             this.label2.Text = "Tablas";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Capa_Vista.Properties.Resources.Table_38px;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 130);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 49;
+            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -516,7 +547,7 @@ namespace Capa_Vista {
             this.lbCreated.Location = new System.Drawing.Point(462, 84);
             this.lbCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCreated.Name = "lbCreated";
-            this.lbCreated.Size = new System.Drawing.Size(0, 23);
+            this.lbCreated.Size = new System.Drawing.Size(0, 19);
             this.lbCreated.TabIndex = 46;
             // 
             // lbSize
@@ -528,7 +559,7 @@ namespace Capa_Vista {
             this.lbSize.Location = new System.Drawing.Point(304, 84);
             this.lbSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSize.Name = "lbSize";
-            this.lbSize.Size = new System.Drawing.Size(0, 23);
+            this.lbSize.Size = new System.Drawing.Size(0, 19);
             this.lbSize.TabIndex = 45;
             // 
             // lbOwner
@@ -540,7 +571,7 @@ namespace Capa_Vista {
             this.lbOwner.Location = new System.Drawing.Point(68, 84);
             this.lbOwner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOwner.Name = "lbOwner";
-            this.lbOwner.Size = new System.Drawing.Size(0, 23);
+            this.lbOwner.Size = new System.Drawing.Size(0, 19);
             this.lbOwner.TabIndex = 44;
             // 
             // cboDBList
@@ -549,11 +580,11 @@ namespace Capa_Vista {
             this.cboDBList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDBList.ForeColor = System.Drawing.Color.White;
             this.cboDBList.FormattingEnabled = true;
-            this.cboDBList.ItemHeight = 24;
+            this.cboDBList.ItemHeight = 23;
             this.cboDBList.Location = new System.Drawing.Point(259, 37);
             this.cboDBList.Margin = new System.Windows.Forms.Padding(4);
             this.cboDBList.Name = "cboDBList";
-            this.cboDBList.Size = new System.Drawing.Size(405, 30);
+            this.cboDBList.Size = new System.Drawing.Size(405, 29);
             this.cboDBList.Style = MetroFramework.MetroColorStyle.Purple;
             this.cboDBList.TabIndex = 43;
             this.cboDBList.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -569,49 +600,9 @@ namespace Capa_Vista {
             this.label1.Location = new System.Drawing.Point(68, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 30);
+            this.label1.Size = new System.Drawing.Size(127, 25);
             this.label1.TabIndex = 42;
             this.label1.Text = "Bases de Datos";
-            // 
-            // metroTabPage2
-            // 
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 9;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 47);
-            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(4);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(1272, 606);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Reportes";
-            this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Capa_Vista.Properties.Resources.View_Column_38px;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 260);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 54;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Capa_Vista.Properties.Resources.Table_38px;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 130);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 49;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -625,9 +616,82 @@ namespace Capa_Vista {
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
             // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.Controls.Add(this.btnDetalle);
+            this.metroTabPage2.Controls.Add(this.label10);
+            this.metroTabPage2.Controls.Add(this.libTAnalizada);
+            this.metroTabPage2.Controls.Add(this.dtgTAnalizadas);
+            this.metroTabPage2.Controls.Add(this.label11);
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.HorizontalScrollbarSize = 3;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 47);
+            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(1272, 606);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "Reportes";
+            this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.VerticalScrollbarSize = 3;
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(45)))), ((int)(((byte)(128)))));
+            this.btnDetalle.Location = new System.Drawing.Point(826, 33);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnDetalle.TabIndex = 9;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(108, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 15);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Tablas Analizadas";
+            // 
+            // libTAnalizada
+            // 
+            this.libTAnalizada.BackColor = System.Drawing.Color.DimGray;
+            this.libTAnalizada.FormattingEnabled = true;
+            this.libTAnalizada.ItemHeight = 15;
+            this.libTAnalizada.Location = new System.Drawing.Point(44, 66);
+            this.libTAnalizada.Name = "libTAnalizada";
+            this.libTAnalizada.Size = new System.Drawing.Size(216, 304);
+            this.libTAnalizada.TabIndex = 7;
+            // 
+            // dtgTAnalizadas
+            // 
+            this.dtgTAnalizadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgTAnalizadas.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dtgTAnalizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgTAnalizadas.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtgTAnalizadas.Location = new System.Drawing.Point(396, 66);
+            this.dtgTAnalizadas.Name = "dtgTAnalizadas";
+            this.dtgTAnalizadas.Size = new System.Drawing.Size(505, 304);
+            this.dtgTAnalizadas.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(393, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 15);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Detalle de Tabla Analizada";
+            // 
             // MainViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 772);
             this.Controls.Add(this.metroTabControl1);
@@ -651,6 +715,9 @@ namespace Capa_Vista {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.metroTabPage2.ResumeLayout(false);
+            this.metroTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTAnalizadas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -694,6 +761,11 @@ namespace Capa_Vista {
         private Label lbDatoMayor;
         private Label lbTableType;
         private Label lbTableSchema;
+        private Label label11;
+        private DataGridView dtgTAnalizadas;
+        private ListBox libTAnalizada;
+        private Label label10;
+        private Button btnDetalle;
 
         public Button BtnLoadDB { get => btnLoadDB; set => btnLoadDB = value; }
     }

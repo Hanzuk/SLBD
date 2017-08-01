@@ -16,12 +16,32 @@ namespace Capa_Vista
     {
 
         public string InstanceName { get; set; }
+        public int con = 0;
         public MainViewer() {
             InitializeComponent();
+            DataGridViewTextBoxColumn c1 = new DataGridViewTextBoxColumn();
+            c1.HeaderText = "Base de Datos";
+            c1.Width = 200;
+            c1.ReadOnly = true;
+            DataGridViewTextBoxColumn c2 = new DataGridViewTextBoxColumn();
+            c2.HeaderText = "Tabla";
+            c2.Width = 200;
+            c2.ReadOnly = true;
+            DataGridViewTextBoxColumn c3 = new DataGridViewTextBoxColumn();
+            c3.HeaderText = "Columna Analizada";
+            c3.Width = 200;
+            c3.ReadOnly = true;
+
+            dtgTAnalizadas.Columns.Add(c1);
+            dtgTAnalizadas.Columns.Add(c2);
+            dtgTAnalizadas.Columns.Add(c3);
+
+
         }
 
         List<Database> listDB = new List<Database>();
         List<Table> listTB = new List<Table>();
+        List<string> Detalle = new List<string>();
         
         private void btnLoadDB_Click(object sender, EventArgs e) {
             listDB = new LoadDataBaseCN().LoadDataBases(InstanceName);
@@ -102,7 +122,7 @@ namespace Capa_Vista
                     if (cboTables.Items.Count > 0) {
                         if (item.Name == cboTables.SelectedValue.ToString()) {
                             lbTableSchema.Text = $"Table Schema:   {item.Schema}";
-                            lbTableType.Text = $"Table Type:   {item.Type}";
+                            lbTableType.Text = $"Table Type:   {item.Type}";                          
                         }
                     }
                 }
@@ -114,6 +134,11 @@ namespace Capa_Vista
             DatoMayor(oACN);
             DatoMenor(oACN);
             TotalDatos(oACN);
+            //cboTAnalizadas.Items.Add(cboTables.SelectedValue.ToString());
+            //libTAnalizadas.Items.Add(cboTables.SelectedValue.ToString());
+            //dtgTAnalizadas.Rows.Add(cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),listbColumns.SelectedValue.ToString());
+            libTAnalizada.Items.Add(cboTables.SelectedValue.ToString());
+            guardarDetalle();
         }
 
         public void DatoMayor(AnalyzeCN objectACN) {
@@ -159,6 +184,29 @@ namespace Capa_Vista
 
         private void listbColumns_SelectedIndexChanged(object sender, EventArgs e){
             btnAnalyzeColumn.Enabled = true;
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            foreach (string item in Detalle)
+            {
+                if (item.ToString() == libTAnalizada.SelectedValue.ToString())
+                {
+                    dtgTAnalizadas.Rows.Add(cboDBList.SelectedValue.ToString(), libTAnalizada.SelectedValue.ToString(), listbColumns.SelectedValue.ToString());
+                }
+
+            }
+        }
+
+        public void guardarDetalle()
+        {
+            foreach (string item in Detalle)
+            {
+                Detalle.Add(cboDBList.SelectedValue.ToString());
+                Detalle.Add(libTAnalizada.SelectedValue.ToString());
+                Detalle.Add(listbColumns.SelectedValue.ToString());
+                con = con + 1;
+            }
         }
     }
 }
