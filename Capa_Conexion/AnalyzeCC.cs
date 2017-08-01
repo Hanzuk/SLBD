@@ -31,5 +31,15 @@ namespace Capa_Conexion {
             oSQLC.CommandText = $"SELECT COUNT({clname}) FROM {dbname}.{schema}.{tbname};";
             return oCN.ExecuteQuery(oSQLC);
         }
+
+
+        public DataTable PorcentajeDatoNumero(string instanceName, string dbname, string tbname, string schema, string clname) {
+            Connection oCN = new Connection(instanceName);
+            SqlCommand oSQLC = new SqlCommand();
+            oSQLC.CommandType = CommandType.Text;
+            oSQLC.CommandText = $"SELECT COUNT({clname}) FROM {dbname}.{schema}.{tbname} WHERE ISNUMERIC{clname} = 0;";
+            return oCN.ExecuteQuery(oSQLC);
+        }
+
     }
 }

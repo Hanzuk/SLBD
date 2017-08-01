@@ -171,6 +171,17 @@ namespace Capa_Vista
             lbTotalDatos.Text = objectACN.LoadTotalDatos(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
         }
 
+        public void Porcentaje(AnalyzeCN objectACN)
+        {
+            string schema = "";
+            foreach (Table item in listTB) {
+                if (item.Name.Equals(cboTables.SelectedValue.ToString())) {
+                    schema = item.Schema;
+                }
+            }
+            lbPorcentaje.Text = objectACN.PorcentajeDatoNumero(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
+        }
+
         private void btnSearchInstances_Click(object sender, EventArgs e) {
             //Valida si el formulario ya esta abierto.
             Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "InstancesViewer").SingleOrDefault<Form>();
