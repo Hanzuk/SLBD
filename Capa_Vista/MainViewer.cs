@@ -118,6 +118,7 @@ namespace Capa_Vista
             TotalDatos(oACN);
             Porcentaje(oACN);
             PorcentajeLetra(oACN);
+            TipoDato(oACN);
             GuardarDetalle();
             pResultado.Visible = true;
         }
@@ -194,6 +195,19 @@ namespace Capa_Vista
             lbporlet.Text = nuevoelemento;
         }
 
+        private void TipoDato(AnalyzeCN objectACN)
+        {
+            string schema = "";
+            foreach (Table item in listTB)
+            {
+                if (item.Name.Equals(cboTables.SelectedValue.ToString()))
+                {
+                    schema = item.Schema;
+                }
+            }
+            lbtipodato.Text = objectACN.TipoDatos(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),schema);
+        }
+
         private void btnSearchInstances_Click(object sender, EventArgs e) {
             //Valida si el formulario ya esta abierto.
             Form existe = Application.OpenForms.OfType<Form>().Where(x => x.Name == "InstancesViewer").SingleOrDefault<Form>();
@@ -203,18 +217,6 @@ namespace Capa_Vista
                 InstancesViewer IW = new InstancesViewer();
                 IW.Show();
             }
-        }
-
-        private void TipoDato(AnalyzeCN objectACN) {
-            string schema = "";
-            foreach (Table item in listTB)
-            {
-                if (item.Name.Equals(cboTables.SelectedValue.ToString()))
-                {
-                    schema = item.Schema;
-                }
-            }
-            //lbTotalDatos.Text = objectACN.TipoDatos(instance, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),listbColumns.SelectedValue.ToString());
         }
 
 
