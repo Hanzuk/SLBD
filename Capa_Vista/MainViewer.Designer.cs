@@ -35,6 +35,9 @@ namespace Capa_Vista {
             this.listbColumns = new System.Windows.Forms.ListBox();
             this.btnSearchInstances = new System.Windows.Forms.Button();
             this.pResultado = new System.Windows.Forms.Panel();
+            this.lbpornum = new System.Windows.Forms.Label();
+            this.lbporlet = new System.Windows.Forms.Label();
+            this.lbLetras = new System.Windows.Forms.Label();
             this.lbPorcentaje = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lbSolucion = new System.Windows.Forms.Label();
@@ -75,9 +78,8 @@ namespace Capa_Vista {
             this.libTAnalizada = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnReporte = new System.Windows.Forms.Button();
-            this.lbLetras = new System.Windows.Forms.Label();
-            this.lbporlet = new System.Windows.Forms.Label();
-            this.lbpornum = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbtipodato = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -223,6 +225,8 @@ namespace Capa_Vista {
             // pResultado
             // 
             this.pResultado.BackColor = System.Drawing.Color.Transparent;
+            this.pResultado.Controls.Add(this.lbtipodato);
+            this.pResultado.Controls.Add(this.label11);
             this.pResultado.Controls.Add(this.lbpornum);
             this.pResultado.Controls.Add(this.lbporlet);
             this.pResultado.Controls.Add(this.lbLetras);
@@ -242,8 +246,44 @@ namespace Capa_Vista {
             this.pResultado.Location = new System.Drawing.Point(648, 325);
             this.pResultado.Margin = new System.Windows.Forms.Padding(4);
             this.pResultado.Name = "pResultado";
-            this.pResultado.Size = new System.Drawing.Size(619, 268);
+            this.pResultado.Size = new System.Drawing.Size(619, 281);
             this.pResultado.TabIndex = 59;
+            // 
+            // lbpornum
+            // 
+            this.lbpornum.AutoSize = true;
+            this.lbpornum.BackColor = System.Drawing.Color.Transparent;
+            this.lbpornum.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbpornum.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbpornum.Location = new System.Drawing.Point(297, 162);
+            this.lbpornum.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.lbpornum.Name = "lbpornum";
+            this.lbpornum.Size = new System.Drawing.Size(0, 21);
+            this.lbpornum.TabIndex = 36;
+            // 
+            // lbporlet
+            // 
+            this.lbporlet.AutoSize = true;
+            this.lbporlet.BackColor = System.Drawing.Color.Transparent;
+            this.lbporlet.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbporlet.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbporlet.Location = new System.Drawing.Point(297, 192);
+            this.lbporlet.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.lbporlet.Name = "lbporlet";
+            this.lbporlet.Size = new System.Drawing.Size(0, 21);
+            this.lbporlet.TabIndex = 35;
+            // 
+            // lbLetras
+            // 
+            this.lbLetras.AutoSize = true;
+            this.lbLetras.BackColor = System.Drawing.Color.Transparent;
+            this.lbLetras.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLetras.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbLetras.Location = new System.Drawing.Point(227, 192);
+            this.lbLetras.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.lbLetras.Name = "lbLetras";
+            this.lbLetras.Size = new System.Drawing.Size(0, 21);
+            this.lbLetras.TabIndex = 34;
             // 
             // lbPorcentaje
             // 
@@ -336,7 +376,7 @@ namespace Capa_Vista {
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(12, 230);
+            this.label3.Location = new System.Drawing.Point(13, 247);
             this.label3.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 21);
@@ -806,41 +846,30 @@ namespace Capa_Vista {
             this.btnReporte.UseVisualStyleBackColor = false;
             this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
-            // lbLetras
+            // label11
             // 
-            this.lbLetras.AutoSize = true;
-            this.lbLetras.BackColor = System.Drawing.Color.Transparent;
-            this.lbLetras.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLetras.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbLetras.Location = new System.Drawing.Point(227, 192);
-            this.lbLetras.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lbLetras.Name = "lbLetras";
-            this.lbLetras.Size = new System.Drawing.Size(0, 21);
-            this.lbLetras.TabIndex = 34;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label11.Location = new System.Drawing.Point(13, 223);
+            this.label11.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(102, 21);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "Tipo de Dato:";
             // 
-            // lbporlet
+            // lbtipodato
             // 
-            this.lbporlet.AutoSize = true;
-            this.lbporlet.BackColor = System.Drawing.Color.Transparent;
-            this.lbporlet.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbporlet.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbporlet.Location = new System.Drawing.Point(297, 192);
-            this.lbporlet.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lbporlet.Name = "lbporlet";
-            this.lbporlet.Size = new System.Drawing.Size(0, 21);
-            this.lbporlet.TabIndex = 35;
-            // 
-            // lbpornum
-            // 
-            this.lbpornum.AutoSize = true;
-            this.lbpornum.BackColor = System.Drawing.Color.Transparent;
-            this.lbpornum.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbpornum.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbpornum.Location = new System.Drawing.Point(297, 162);
-            this.lbpornum.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lbpornum.Name = "lbpornum";
-            this.lbpornum.Size = new System.Drawing.Size(0, 21);
-            this.lbpornum.TabIndex = 36;
+            this.lbtipodato.AutoSize = true;
+            this.lbtipodato.BackColor = System.Drawing.Color.Transparent;
+            this.lbtipodato.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtipodato.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbtipodato.Location = new System.Drawing.Point(227, 223);
+            this.lbtipodato.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.lbtipodato.Name = "lbtipodato";
+            this.lbtipodato.Size = new System.Drawing.Size(0, 21);
+            this.lbtipodato.TabIndex = 38;
             // 
             // MainViewer
             // 
@@ -929,6 +958,8 @@ namespace Capa_Vista {
         private Label lbLetras;
         private Label lbpornum;
         private Label lbporlet;
+        private Label lbtipodato;
+        private Label label11;
 
         public Button BtnLoadDB { get => btnLoadDB; set => btnLoadDB = value; }
     }

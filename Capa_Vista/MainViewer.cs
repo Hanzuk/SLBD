@@ -204,6 +204,19 @@ namespace Capa_Vista
             }
         }
 
+        private void TipoDato(AnalyzeCN objectACN) {
+            string schema = "";
+            foreach (Table item in listTB)
+            {
+                if (item.Name.Equals(cboTables.SelectedValue.ToString()))
+                {
+                    schema = item.Schema;
+                }
+            }
+            //lbTotalDatos.Text = objectACN.TipoDatos(instance, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),listbColumns.SelectedValue.ToString());
+        }
+
+
         private void listbColumns_SelectedIndexChanged(object sender, EventArgs e){
             btnAnalyzeColumn.Enabled = true;
         }

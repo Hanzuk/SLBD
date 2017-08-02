@@ -50,5 +50,15 @@ namespace Capa_Conexion {
             return oCN.ExecuteQuery(oSQLC);
         }
 
+        public DataTable TipoDato(string instance, string dbname, string tbname)
+        {
+            Connection oCN = new Connection(instance);
+            SqlCommand oSQLC = new SqlCommand();
+            oSQLC.CommandType = CommandType.Text;
+            oSQLC.CommandText = $"SELECT DATA_TYPE FROM {dbname}.INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @TbName;";
+            oSQLC.Parameters.Add("@TbName", SqlDbType.VarChar).Value = tbname;
+            return oCN.ExecuteQuery(oSQLC);
+        }
+
     }
 }
