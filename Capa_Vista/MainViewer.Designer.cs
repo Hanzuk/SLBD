@@ -34,6 +34,8 @@ namespace Capa_Vista {
             this.listbColumns = new System.Windows.Forms.ListBox();
             this.btnSearchInstances = new System.Windows.Forms.Button();
             this.pResultado = new System.Windows.Forms.Panel();
+            this.lbPorcentaje = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lbSolucion = new System.Windows.Forms.Label();
             this.lbProblemas = new System.Windows.Forms.Label();
             this.lbTotalDatos = new System.Windows.Forms.Label();
@@ -68,8 +70,6 @@ namespace Capa_Vista {
             this.libTAnalizada = new System.Windows.Forms.ListBox();
             this.dtgTAnalizadas = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lbPorcentaje = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -232,6 +232,31 @@ namespace Capa_Vista {
             this.pResultado.Name = "pResultado";
             this.pResultado.Size = new System.Drawing.Size(619, 268);
             this.pResultado.TabIndex = 59;
+            // 
+            // lbPorcentaje
+            // 
+            this.lbPorcentaje.AutoSize = true;
+            this.lbPorcentaje.BackColor = System.Drawing.Color.Transparent;
+            this.lbPorcentaje.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPorcentaje.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbPorcentaje.Location = new System.Drawing.Point(227, 162);
+            this.lbPorcentaje.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.lbPorcentaje.Name = "lbPorcentaje";
+            this.lbPorcentaje.Size = new System.Drawing.Size(0, 21);
+            this.lbPorcentaje.TabIndex = 33;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label12.Location = new System.Drawing.Point(13, 162);
+            this.label12.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 21);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Porcentaje:";
             // 
             // lbSolucion
             // 
@@ -692,31 +717,6 @@ namespace Capa_Vista {
             this.label11.Size = new System.Drawing.Size(146, 15);
             this.label11.TabIndex = 5;
             this.label11.Text = "Detalle de Tabla Analizada";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label12.Location = new System.Drawing.Point(13, 162);
-            this.label12.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 21);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Porcentaje:";
-            // 
-            // lbPorcentaje
-            // 
-            this.lbPorcentaje.AutoSize = true;
-            this.lbPorcentaje.BackColor = System.Drawing.Color.Transparent;
-            this.lbPorcentaje.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPorcentaje.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbPorcentaje.Location = new System.Drawing.Point(274, 162);
-            this.lbPorcentaje.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lbPorcentaje.Name = "lbPorcentaje";
-            this.lbPorcentaje.Size = new System.Drawing.Size(0, 21);
-            this.lbPorcentaje.TabIndex = 33;
             // 
             // MainViewer
             // 

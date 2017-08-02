@@ -37,7 +37,7 @@ namespace Capa_Conexion {
             Connection oCN = new Connection(instanceName);
             SqlCommand oSQLC = new SqlCommand();
             oSQLC.CommandType = CommandType.Text;
-            oSQLC.CommandText = $"SELECT COUNT({clname}) FROM {dbname}.{schema}.{tbname} WHERE ISNUMERIC{clname} = 0;";
+            oSQLC.CommandText = $"SELECT COUNT({clname}) FROM {dbname}.{schema}.{tbname} WHERE ISNUMERIC({clname}) <> 0;";
             return oCN.ExecuteQuery(oSQLC);
         }
 

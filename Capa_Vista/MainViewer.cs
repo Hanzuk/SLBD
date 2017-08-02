@@ -134,6 +134,7 @@ namespace Capa_Vista
             DatoMayor(oACN);
             DatoMenor(oACN);
             TotalDatos(oACN);
+            Porcentaje(oACN);
             //cboTAnalizadas.Items.Add(cboTables.SelectedValue.ToString());
             //libTAnalizadas.Items.Add(cboTables.SelectedValue.ToString());
             //dtgTAnalizadas.Rows.Add(cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),listbColumns.SelectedValue.ToString());
