@@ -19,24 +19,6 @@ namespace Capa_Vista
         public int con = 0;
         public MainViewer() {
             InitializeComponent();
-            DataGridViewTextBoxColumn c1 = new DataGridViewTextBoxColumn();
-            c1.HeaderText = "Base de Datos";
-            c1.Width = 200;
-            c1.ReadOnly = true;
-            DataGridViewTextBoxColumn c2 = new DataGridViewTextBoxColumn();
-            c2.HeaderText = "Tabla";
-            c2.Width = 200;
-            c2.ReadOnly = true;
-            DataGridViewTextBoxColumn c3 = new DataGridViewTextBoxColumn();
-            c3.HeaderText = "Columna Analizada";
-            c3.Width = 200;
-            c3.ReadOnly = true;
-
-            dtgTAnalizadas.Columns.Add(c1);
-            dtgTAnalizadas.Columns.Add(c2);
-            dtgTAnalizadas.Columns.Add(c3);
-
-
         }
 
         List<Database> listDB = new List<Database>();
@@ -135,11 +117,7 @@ namespace Capa_Vista
             DatoMenor(oACN);
             TotalDatos(oACN);
             Porcentaje(oACN);
-            //cboTAnalizadas.Items.Add(cboTables.SelectedValue.ToString());
-            //libTAnalizadas.Items.Add(cboTables.SelectedValue.ToString());
-            //dtgTAnalizadas.Rows.Add(cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),listbColumns.SelectedValue.ToString());
-            libTAnalizada.Items.Add(cboTables.SelectedValue.ToString());
-            guardarDetalle();
+            GuardarDetalle();
         }
 
         public void DatoMayor(AnalyzeCN objectACN) {
@@ -198,28 +176,23 @@ namespace Capa_Vista
             btnAnalyzeColumn.Enabled = true;
         }
 
-        private void btnDetalle_Click(object sender, EventArgs e)
+        public void GuardarDetalle()
         {
-            foreach (Reporte item in Detalle)
-            {
-                if (item.TBName == libTAnalizada.SelectedValue.ToString())
-                {
-                    dtgTAnalizadas.Rows.Add(cboDBList.SelectedValue.ToString(), libTAnalizada.SelectedValue.ToString(), listbColumns.SelectedValue.ToString());
-                }
-
+            if (!Detalle.Any(x => x.CLName == listbColumns.SelectedValue.ToString())) {
+                Detalle.Add(new Reporte {
+                    DBName = cboDBList.SelectedValue.ToString(),
+                    TBName = cboTables.SelectedValue.ToString(),
+                    CLName = listbColumns.SelectedValue.ToString()
+                });
             }
         }
 
-        public void guardarDetalle()
-        {
+        private void btnReporte_Click(object sender, EventArgs e) {
+            libTAnalizada.DataSource = Detalle.Select(x => x.TBName).Distinct().ToList();
+        }
 
-            foreach (Reporte item in Detalle)
-            {
-                item.DBName = cboDBList.SelectedValue.ToString();
-                item.TBName = libTAnalizada.SelectedValue.ToString();
-                item.CLName = listbColumns.SelectedValue.ToString();
-                con = con + 1;
-            }
+        private void libTAnalizada_SelectedValueChanged(object sender, EventArgs e) {
+            dgvDetalles.DataSource = Detalle.Where(x => x.TBName == libTAnalizada.SelectedValue.ToString()).ToList();
         }
     }
 }
