@@ -119,6 +119,7 @@ namespace Capa_Vista
             Porcentaje(oACN);
             PorcentajeLetra(oACN);
             GuardarDetalle();
+            pResultado.Visible = true;
         }
 
         public void DatoMayor(AnalyzeCN objectACN) {
@@ -219,6 +220,7 @@ namespace Capa_Vista
 
         private void listbColumns_SelectedIndexChanged(object sender, EventArgs e){
             btnAnalyzeColumn.Enabled = true;
+            pResultado.Visible = false;
         }
 
         public void GuardarDetalle()
@@ -227,7 +229,9 @@ namespace Capa_Vista
                 Detalle.Add(new Reporte {
                     DBName = cboDBList.SelectedValue.ToString(),
                     TBName = cboTables.SelectedValue.ToString(),
-                    CLName = listbColumns.SelectedValue.ToString()
+                    CLName = listbColumns.SelectedValue.ToString(),
+                    PorcenNum = lbpornum.Text,
+                    PorcenLet = lbporlet.Text
                 });
             }
         }

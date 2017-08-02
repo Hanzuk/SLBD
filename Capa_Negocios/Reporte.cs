@@ -11,5 +11,7 @@ namespace Capa_Negocios
         public string DBName { get; set; }
         public string TBName { get; set; }
         public string CLName { get; set; }
+        public string PorcenNum { get; set; }
+        public string PorcenLet { get; set; }
     }
 }
