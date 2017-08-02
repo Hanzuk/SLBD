@@ -41,5 +41,15 @@ namespace Capa_Negocios {
             }
             return porcentaje;
         }
+
+        public string PorcentajeDatoletra(string instanceName, string dbname, string tbname, string schema, string clname)
+        {
+            string porcletra = "";
+            foreach (DataRow row in new AnalyzeCC().PorcentajeDatoLetra(instanceName, dbname, tbname, schema, clname).Rows)
+            {
+                porcletra = row[0].ToString();
+            }
+            return porcletra;
+        }
     }
 }

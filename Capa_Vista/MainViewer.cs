@@ -117,6 +117,7 @@ namespace Capa_Vista
             DatoMenor(oACN);
             TotalDatos(oACN);
             Porcentaje(oACN);
+            PorcentajeLetra(oACN);
             GuardarDetalle();
         }
 
@@ -153,12 +154,43 @@ namespace Capa_Vista
         public void Porcentaje(AnalyzeCN objectACN)
         {
             string schema = "";
+            int num;
+            int total;
+            int resultado;
+            string nuevoelemento;
             foreach (Table item in listTB) {
                 if (item.Name.Equals(cboTables.SelectedValue.ToString())) {
                     schema = item.Schema;
                 }
             }
             lbPorcentaje.Text = objectACN.PorcentajeDatoNumero(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
+            num = int.Parse(lbPorcentaje.Text);
+            total = int.Parse(lbTotalDatos.Text);
+            resultado = num * 100 / total;
+            nuevoelemento = resultado.ToString() + '%';
+            lbpornum.Text = nuevoelemento;
+        }
+
+        public void PorcentajeLetra(AnalyzeCN objectACN)
+        {
+            string schema = "";
+            int num;
+            int total;
+            int resultado;
+            string nuevoelemento;
+            foreach (Table item in listTB)
+            {
+                if (item.Name.Equals(cboTables.SelectedValue.ToString()))
+                {
+                    schema = item.Schema;
+                }
+            }
+            lbLetras.Text = objectACN.PorcentajeDatoletra(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
+            num = int.Parse(lbLetras.Text);
+            total = int.Parse(lbTotalDatos.Text);
+            resultado = num * 100 / total;
+            nuevoelemento = resultado.ToString() + '%';
+            lbporlet.Text = nuevoelemento;
         }
 
         private void btnSearchInstances_Click(object sender, EventArgs e) {
