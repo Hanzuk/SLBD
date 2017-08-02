@@ -486,7 +486,7 @@ namespace Capa_Vista {
             this.btnAnalyzeColumn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnalyzeColumn.ForeColor = System.Drawing.Color.White;
             this.btnAnalyzeColumn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnalyzeColumn.Location = new System.Drawing.Point(823, 260);
+            this.btnAnalyzeColumn.Location = new System.Drawing.Point(760, 247);
             this.btnAnalyzeColumn.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnalyzeColumn.Name = "btnAnalyzeColumn";
             this.btnAnalyzeColumn.Size = new System.Drawing.Size(180, 51);
@@ -803,7 +803,7 @@ namespace Capa_Vista {
             this.panel3.Controls.Add(this.libTAnalizada);
             this.panel3.Location = new System.Drawing.Point(3, 233);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(327, 370);
+            this.panel3.Size = new System.Drawing.Size(327, 351);
             this.panel3.TabIndex = 60;
             // 
             // libTAnalizada
