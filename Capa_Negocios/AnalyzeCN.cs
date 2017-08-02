@@ -52,9 +52,9 @@ namespace Capa_Negocios {
             return porcletra;
         }
 
-        public string TipoDatos(string instanceName, string dbname, string tbname,string schema) {
+        public string TipoDatos(string instanceName, string dbname, string tbname,string schema, string clname) {
             string tipodato = "";
-            foreach (DataRow row in new AnalyzeCC().TipoDato(instanceName, dbname, tbname, schema).Rows)
+            foreach (DataRow row in new AnalyzeCC().TipoDato(instanceName, dbname, tbname, schema, clname).Rows)
             {
                 tipodato = row[0].ToString();
             }

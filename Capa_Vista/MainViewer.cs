@@ -118,7 +118,7 @@ namespace Capa_Vista
             TotalDatos(oACN);
             Porcentaje(oACN);
             PorcentajeLetra(oACN);
-            //TipoDato(oACN);
+            TipoDato(oACN);
             GuardarDetalle();
             pResultado.Visible = true;
         }
@@ -168,9 +168,15 @@ namespace Capa_Vista
             lbPorcentaje.Text = objectACN.PorcentajeDatoNumero(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
             num = int.Parse(lbPorcentaje.Text);
             total = int.Parse(lbTotalDatos.Text);
-            resultado = num * 100 / total;
-            nuevoelemento = resultado.ToString() + '%';
-            lbpornum.Text = nuevoelemento;
+            if (total > 0)
+            {
+                resultado = num * 100 / total;
+                nuevoelemento = resultado.ToString() + '%';
+                lbpornum.Text = nuevoelemento;
+            }
+            else {
+                lbpornum.Text = "No hay Datos";
+            }
         }
 
         public void PorcentajeLetra(AnalyzeCN objectACN)
@@ -190,12 +196,18 @@ namespace Capa_Vista
             lbLetras.Text = objectACN.PorcentajeDatoletra(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
             num = int.Parse(lbLetras.Text);
             total = int.Parse(lbTotalDatos.Text);
-            resultado = num * 100 / total;
-            nuevoelemento = resultado.ToString() + '%';
-            lbporlet.Text = nuevoelemento;
+            if (total > 0)
+            {
+                resultado = num * 100 / total;
+                nuevoelemento = resultado.ToString() + '%';
+                lbporlet.Text = nuevoelemento;
+            }
+            else {
+                lbporlet.Text = "No hay datos";
+            }
         }
 
-       /* private void TipoDato(AnalyzeCN objectACN)
+        private void TipoDato(AnalyzeCN objectACN)
         {
             string schema = "";
             foreach (Table item in listTB)
@@ -205,8 +217,8 @@ namespace Capa_Vista
                     schema = item.Schema;
                 }
             }
-            lbtipodato.Text = objectACN.TipoDatos(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),schema);
-        }*/
+            lbtipodato.Text = objectACN.TipoDatos(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),schema,listbColumns.ToString());
+        }
 
         private void btnSearchInstances_Click(object sender, EventArgs e) {
             //Valida si el formulario ya esta abierto.
