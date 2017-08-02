@@ -276,6 +276,7 @@ namespace Capa_Vista {
             this.label11.Size = new System.Drawing.Size(102, 21);
             this.label11.TabIndex = 37;
             this.label11.Text = "Tipo de Dato:";
+            this.label11.Visible = false;
             // 
             // lbpornum
             // 

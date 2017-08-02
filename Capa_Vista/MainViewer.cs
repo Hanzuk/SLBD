@@ -118,7 +118,7 @@ namespace Capa_Vista
             TotalDatos(oACN);
             Porcentaje(oACN);
             PorcentajeLetra(oACN);
-            TipoDato(oACN);
+            //TipoDato(oACN);
             GuardarDetalle();
             pResultado.Visible = true;
         }
@@ -195,7 +195,7 @@ namespace Capa_Vista
             lbporlet.Text = nuevoelemento;
         }
 
-        private void TipoDato(AnalyzeCN objectACN)
+       /* private void TipoDato(AnalyzeCN objectACN)
         {
             string schema = "";
             foreach (Table item in listTB)
@@ -206,7 +206,7 @@ namespace Capa_Vista
                 }
             }
             lbtipodato.Text = objectACN.TipoDatos(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(),schema);
-        }
+        }*/
 
         private void btnSearchInstances_Click(object sender, EventArgs e) {
             //Valida si el formulario ya esta abierto.
