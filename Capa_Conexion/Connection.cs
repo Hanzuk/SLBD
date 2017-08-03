@@ -53,7 +53,7 @@ namespace Capa_Conexion
                 CloseConnection();
                 return oDT;
             } catch (SqlException e) {
-                throw e;
+                return null;
             }
         }
 

@@ -130,7 +130,11 @@ namespace Capa_Vista
                     schema = item.Schema;
                 }
             }
-            lbDatoMayor.Text = objectACN.LoadDatoMayor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
+            if (objectACN.LoadDatoMayor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString()) == "") {
+                lbDatoMayor.Text = "Imposible obtener el dato mayor.";
+            } else {
+                lbDatoMayor.Text = objectACN.LoadDatoMayor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
+            }
         }
 
         public void DatoMenor(AnalyzeCN objectACN) {
@@ -140,7 +144,11 @@ namespace Capa_Vista
                     schema = item.Schema;
                 }
             }
-            lbDatoMenor.Text = objectACN.LoadDatoMenor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
+            if (objectACN.LoadDatoMenor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString()) == "") {
+                lbDatoMenor.Text = "Imposible obtener el dato menor.";
+            } else {
+                lbDatoMenor.Text = objectACN.LoadDatoMenor(InstanceName, cboDBList.SelectedValue.ToString(), cboTables.SelectedValue.ToString(), schema, listbColumns.SelectedValue.ToString());
+            }
         }
 
         public void TotalDatos(AnalyzeCN objectACN) {
